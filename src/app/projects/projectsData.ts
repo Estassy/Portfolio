@@ -44,4 +44,13 @@ export const PROJECTS = [
     repo: "https://github.com/Estassy/exam-management-system",
     demo: "https://github.com/Estassy/exam-management-system#-aperçu",
   },
+  {
+    slug: "hackathon-airbus",
+    title: "Hackathon Airbus – RL Drone Navigation",
+    tags: ["Reinforcement Learning", "Python", "Jupyter", "Multi-Agent"],
+    description:
+      "Algorithme RL pour navigation autonome de drones en environnement simulé. Optimisation d'évacuation avec LIDAR et obstacles dynamiques.",
+    repo: "https://github.com/Estassy/hackathon_toolkit",
+    demo: "#",
+  },
 ];

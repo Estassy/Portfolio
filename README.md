@@ -2,6 +2,8 @@
 
 > Portfolio moderne et interactif d'un ingénieur logiciel Full-Stack & Cloud
 
+**🌐 [Voir le portfolio en ligne](https://marc-estassy-bataba.vercel.app)**
+
 [![Next.js](https://img.shields.io/badge/Next.js-16.0.1-black?logo=next.js)](https://nextjs.org/)
 [![React](https://img.shields.io/badge/React-19.2.0-61DAFB?logo=react)](https://reactjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?logo=typescript)](https://www.typescriptlang.org/)
@@ -21,6 +23,7 @@
 ## 🏗️ Architecture
 
 ### Sections principales
+
 - **Hero** : Présentation avec onglets interactifs (Objectif, Diplômes, Faits marquants)
 - **Projets** : Showcase des réalisations techniques
 - **Compétences** : 9 catégories organisées (Back-end, Front-end, DevOps, etc.)
@@ -28,6 +31,7 @@
 - **Contact** : Formulaire et liens sociaux
 
 ### Structure technique
+
 ```
 src/app/
 ├── components/          # Composants réutilisables
@@ -46,6 +50,7 @@ src/app/
 ## 🛠️ Stack Technique
 
 ### Frontend
+
 - **Next.js 16.0.1** - Framework React avec App Router
 - **React 19.2.0** - Bibliothèque UI avec hooks modernes
 - **TypeScript 5** - Typage statique pour plus de robustesse
@@ -53,6 +58,7 @@ src/app/
 - **Framer Motion 12.23.24** - Animations et transitions
 
 ### Développement
+
 - **ESLint 9** - Linter pour la qualité du code
 - **Lucide React** - Icônes modernes et cohérentes
 - **PostCSS** - Transformation CSS avancée
@@ -60,7 +66,8 @@ src/app/
 ## 🚀 Démarrage rapide
 
 ### Prérequis
-- Node.js 18+ 
+
+- Node.js 18+
 - npm, yarn, pnpm ou bun
 
 ### Installation
@@ -102,12 +109,15 @@ npm run start
 ## 🎨 Personnalisation
 
 ### Couleurs et thème
+
 Les couleurs sont définies dans `tailwind.config.js` avec une palette neutre moderne :
+
 - **neutral-950** : Arrière-plan principal
 - **neutral-800/900** : Cartes et composants
 - **Gradients** : Accents visuels subtils
 
 ### Contenu
+
 - **Profile** : Modifier `src/app/profile/profile.tsx`
 - **Projets** : Éditer `src/app/projects/projectsData.ts`
 - **Compétences** : Ajuster `src/app/skills/skills.tsx`
@@ -130,15 +140,9 @@ npm run lint     # Vérification ESLint
 - **Images** : Next.js Image optimization
 - **Fonts** : Preload et optimisation automatique
 
-## 🚀 Déploiement
+## 🌐 Portfolio en ligne
 
-### Vercel (Recommandé)
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Estassy/portfolio)
-
-### Autres plateformes
-- **Netlify** : `npm run build` + deploy `out/`
-- **GitHub Pages** : Avec GitHub Actions
-- **Docker** : Dockerfile inclus pour conteneurisation
+🚀 **Voir le portfolio déployé :** [https://marc-estassy-bataba.vercel.app](https://marc-estassy-bataba.vercel.app)
 
 ## 🤝 Contribution
 
@@ -155,6 +159,7 @@ Ce projet est sous licence MIT. Voir `LICENSE` pour plus de détails.
 ## 📧 Contact
 
 **Marc Estassy BATABA**
+
 - Portfolio : [https://marc-estassy-bataba.vercel.app](https://marc-estassy-bataba.vercel.app)
 - LinkedIn : [linkedin.com/in/marc-estassy-bataba](https://linkedin.com/in/marc-estassy-bataba)
 - Email : marc.estassy.bataba@example.com
