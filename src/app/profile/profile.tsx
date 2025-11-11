@@ -41,8 +41,9 @@ function Profile() {
             </div>
           </h1>
           <p className="mt-6 max-w-prose text-neutral-300">
-            Je conçois, déploie et opère des applications web robustes. J’aime
-            les architectures propres, l’automatisation et l’impact produit.
+            J’aide à concevoir et déployer des applications web performantes, du back-end Java/Spring
+            au front avec des frameworks modernes <span className="whitespace-nowrap">(React / Angular)</span>,
+            avec une approche DevOps orientée qualité, automatisation et delivery.
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-3">
             <SmoothLink
