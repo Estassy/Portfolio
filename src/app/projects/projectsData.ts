@@ -26,4 +26,22 @@ export const PROJECTS = [
     repo: "https://github.com/your-org/saas-ia",
     demo: "#",
   },
+  {
+    slug: "jeu-babylon",
+    title: "Jeu 3D – Babylon.js",
+    tags: ["Babylon.js", "TypeScript", "Blender", "WebGL", "Webpack"],
+    description:
+      "Jeu 3D immersif avec Babylon.js et WebGL. Gameplay innovant avec graphics haute performance.",
+    repo: "https://github.com/Estassy/JeuBabylon",
+    demo: "https://estassy.github.io/JeuBabylon/",
+  },
+  {
+    slug: "exam-management-system",
+    title: "ExamEase – Gestion d'examens",
+    tags: ["Spring Boot", "React", "PostgreSQL", "JWT"],
+    description:
+      "Plateforme web de gestion des examens, utilisateurs (étudiants/enseignants/admins), notifications et résultats.",
+    repo: "https://github.com/Estassy/exam-management-system",
+    demo: "https://github.com/Estassy/exam-management-system#-aperçu",
+  },
 ];
