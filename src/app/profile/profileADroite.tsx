@@ -1,23 +1,19 @@
 import { useState } from "react";
 import TabButton from "../components/TabButton";
 import { motion } from "framer-motion";
-import { LINKS } from "../links/linksData";
 import SmoothLink from "../components/SmoothLink";
 
 function PanelWithTabs() {
-  const [tab, setTab] = useState<string>("objective");
+  const [tab, setTab] = useState<string>("diplomas");
 
   return (
     <div className="mt-6">
       <div className="flex items-center gap-2">
-        <TabButton active={tab === "objective"} onClick={() => setTab("objective")}>
-          Objectif
-        </TabButton>
         <TabButton active={tab === "diplomas"} onClick={() => setTab("diplomas")}>
           Diplômes
         </TabButton>
-        <TabButton active={tab === "highlights"} onClick={() => setTab("highlights")}>
-          Faits marquants
+        <TabButton active={tab === "objective"} onClick={() => setTab("objective")}>
+          Objectif
         </TabButton>
       </div>
 
@@ -43,18 +39,19 @@ function PanelWithTabs() {
 
         {tab === "diplomas" && (
           <div>
-            <p className="mb-2 font-semibold text-neutral-200">Formations</p>
-            <ul className="space-y-3 text-neutral-300">
+            <p className="mb-3 font-semibold text-neutral-200">Diplômes</p>
+            <ul className="space-y-4 text-neutral-300">
               <li>
-                <div className="font-medium">Master 2 MIAGE — Ingénierie informatique des données (2iD)</div>
-                <div className="text-xs text-neutral-400">Mention : Assez bien — <a href={LINKS.cv} className="underline hover:text-white">Voir le CV</a></div>
+                <div className="font-medium text-white">Master : Informatique - Ingénierie des données</div>
+                <div className="mt-1 text-xs text-neutral-400">Université Aix-Marseille, MIAGE | 2023 - 2025</div>
+                <div className="mt-1 text-xs text-green-400">Erasmus | TalTech, Estonie | Sept 2023 - Janv 2024</div>
               </li>
+
               <li>
-                <div className="font-medium">Licence 3 Informatique — Méthodes informatiques appliquées à la gestion des entreprises</div>
-                <div className="text-xs text-neutral-400">Mention : Assez bien — <a href={LINKS.cv} className="underline hover:text-white">Voir le CV</a></div>
+                <div className="font-medium text-white">Licence : Informatique</div>
+                <div className="mt-1 text-xs text-neutral-400">Université Aix-Marseille, UFR Sciences, MIAGE | 2020 - 2023</div>
               </li>
             </ul>
-            <p className="mt-3 text-xs text-neutral-400">Fournis l&apos;&eacute;tablissement et les ann&eacute;es si tu veux qu&apos;ils apparaissent ici (ex. 2021–2024).</p>
           </div>
         )}
 
