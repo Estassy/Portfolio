@@ -6,7 +6,7 @@ import { ExperiencesData } from "./experiencesData";
 import SmoothLink from "../components/SmoothLink";
 
 function Experiences() {
-  
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -21,11 +21,11 @@ function Experiences() {
   };
 
   return (
-    <section id="experiences" className="scroll-mt-24 py-16">
-    <div className="mb-12 text-center">
-      <h2 className="mb-4 text-3xl font-bold md:text-4xl">Expériences Professionnelles</h2>
-    <p className="text-neutral-400">2 ans d&apos;exp&eacute;rience en d&eacute;veloppement full‑stack, entre stage et alternance.</p>
-    </div>
+    <section id="experiences" className="scroll-mt-24 py-8 sm:py-12 md:py-16">
+      <div className="mb-8 sm:mb-12 text-center">
+        <h2 className="mb-4 text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold">Expériences Professionnelles</h2>
+        <p className="text-sm sm:text-base text-neutral-400">2 ans d&apos;exp&eacute;rience en d&eacute;veloppement full‑stack, entre stage et alternance.</p>
+      </div>
 
       <motion.div
         variants={containerVariants}
@@ -35,7 +35,7 @@ function Experiences() {
         className="relative"
       >
         {/* Timeline line */}
-        <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-gradient-to-b from-neutral-600 via-neutral-700 to-neutral-800 md:left-8"></div>
+        <div className="absolute left-3 top-0 bottom-0 w-0.5 bg-gradient-to-b from-neutral-600 via-neutral-700 to-neutral-800 sm:left-4 md:left-8"></div>
 
         {ExperiencesData.map((exp) => (
           <motion.div
@@ -44,10 +44,10 @@ function Experiences() {
             className="relative mb-12 last:mb-0"
           >
             {/* Timeline dot */}
-            <div className="absolute left-2 top-6 h-4 w-4 rounded-full border-4 border-neutral-900 bg-white md:left-6"></div>
-            
+            <div className="absolute left-1 top-6 h-3 w-3 sm:h-4 sm:w-4 rounded-full border-2 sm:border-4 border-neutral-900 bg-white sm:left-2 md:left-6"></div>
+
             {/* Experience card */}
-            <div className="ml-12 md:ml-20">
+            <div className="ml-8 sm:ml-12 md:ml-20">
               <motion.div
                 whileHover={{ y: -2 }}
                 className="rounded-2xl border border-neutral-800 bg-gradient-to-br from-neutral-950 to-neutral-900 p-6 shadow-lg transition-shadow hover:shadow-xl"

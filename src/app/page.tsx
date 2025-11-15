@@ -20,7 +20,7 @@ export default function Portfolio() {
     <NavigationProvider setActive={setActive}>
       <div className="min-h-screen bg-neutral-950 text-neutral-100">
         <Header active={active} setActive={setActive} />
-        <main className="mx-auto max-w-6xl px-4">
+        <main className="mx-auto max-w-6xl px-4 sm:px-6">
           <Profile />
           <Projects />
           <Skills />

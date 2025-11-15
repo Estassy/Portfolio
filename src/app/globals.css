@@ -21,3 +21,30 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
+/* Mobile optimizations */
+@media (max-width: 640px) {
+  /* Prevent horizontal scroll on mobile */
+  body {
+    overflow-x: hidden;
+  }
+
+  /* Better touch targets */
+  a,
+  button {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Optimize text for small screens */
+  h1,
+  h2,
+  h3 {
+    line-height: 1.2;
+  }
+}
+
+/* Improve scrolling on iOS */
+* {
+  -webkit-overflow-scrolling: touch;
+}

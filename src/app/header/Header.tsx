@@ -15,9 +15,9 @@ function Header({ active, setActive }: { active: string; setActive: (k: string) 
   ];
   return (
     <header className="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-neutral-950/60">
-      <nav className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
-        <div className="text-lg font-semibold tracking-wide" aria-label="Identité du portfolio">
-          <span className="font-medium text-neutral-200">Marc <span className="text-neutral-400">Estassy</span></span>{' '}
+      <nav className="mx-auto flex max-w-6xl items-center justify-between px-4 sm:px-6 py-3">
+        <div className="text-sm sm:text-lg font-semibold tracking-wide" aria-label="Identité du portfolio">
+          <span className="font-medium text-neutral-200">Marc <span className="text-neutral-400 hidden sm:inline">Estassy</span></span>{' '}
           <span className="bg-gradient-to-r from-white to-neutral-300 bg-clip-text text-transparent">BATABA</span>
         </div>
         <ul className="relative hidden gap-6 md:flex">

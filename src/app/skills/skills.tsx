@@ -60,24 +60,24 @@ function Skills() {
   };
 
   return (
-    <section id="skills" className="scroll-mt-24 py-16">
-      <h2 className="mb-6 text-2xl font-bold md:text-3xl">Compétences</h2>
+    <section id="skills" className="scroll-mt-24 py-8 sm:py-12 md:py-16">
+      <h2 className="mb-4 sm:mb-6 text-xl sm:text-2xl md:text-3xl font-bold">Compétences</h2>
       <motion.div
         variants={container}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
-        className="grid gap-6 sm:grid-cols-2"
+        className="grid gap-4 sm:gap-6 sm:grid-cols-2"
       >
         {categories.map((cat) => (
           <motion.div
             key={cat.title}
             variants={item}
-            className="rounded-2xl border border-neutral-800 bg-neutral-950 p-5 transition group hover:border-neutral-700 hover:bg-neutral-900/90 focus-within:border-neutral-600"
+            className="rounded-2xl border border-neutral-800 bg-neutral-950 p-4 sm:p-5 transition group hover:border-neutral-700 hover:bg-neutral-900/90 focus-within:border-neutral-600"
           >
             <div className="mb-3 flex items-center gap-2 text-neutral-300">
               {cat.icon}
-              <h3 className="text-sm font-semibold tracking-wide uppercase">{cat.title}</h3>
+              <h3 className="text-xs sm:text-sm font-semibold tracking-wide uppercase">{cat.title}</h3>
             </div>
             <div className="flex flex-wrap gap-2">
               {cat.items.map((s) => (
