@@ -161,8 +161,8 @@ Ce projet est sous licence MIT. Voir `LICENSE` pour plus de détails.
 **Marc Estassy BATABA**
 
 - Portfolio : [https://marc-estassy-bataba.vercel.app](https://marc-estassy-bataba.vercel.app)
-- LinkedIn : [linkedin.com/in/marc-estassy-bataba](https://linkedin.com/in/marc-estassy-bataba)
-- Email : marc.estassy.bataba@example.com
+- LinkedIn : [linkedin.com/in/marc-bataba](https://www.linkedin.com/in/marc-bataba)
+- Email : marcbataba99@gmail.com
 
 ---
 

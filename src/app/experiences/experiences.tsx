@@ -11,13 +11,17 @@ function Experiences() {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { staggerChildren: 0.15 }
+      transition: { staggerChildren: 0.08, delayChildren: 0.1 }
     }
   };
 
   const itemVariants = {
     hidden: { opacity: 0, x: -20 },
-    visible: { opacity: 1, x: 0 }
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.4 }
+    }
   };
 
   return (
@@ -31,7 +35,7 @@ function Experiences() {
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
+        viewport={{ once: true, amount: 0.1 }}
         className="relative"
       >
         {/* Timeline line */}
@@ -91,22 +95,22 @@ function Experiences() {
 
                 {/* Sub-experiences ou Missions selon le type */}
                 {exp.isGrouped && exp.subExperiences ? (
-                  <div className="mb-4 space-y-6">
+                  <div className="mb-4 space-y-4 sm:space-y-6">
                     {exp.subExperiences.map((subExp) => (
-                      <div key={subExp.id} className="rounded-xl border border-neutral-700/50 bg-neutral-800/30 p-4">
-                        <div className="mb-3 flex items-center justify-between">
-                          <div className="flex items-center gap-2">
-                            <h5 className="font-semibold text-white">{subExp.title}</h5>
-                            <span className={`rounded-full px-2 py-0.5 text-xs font-medium ${subExp.type === 'CDI' ? 'bg-green-600/20 text-green-300 ring-1 ring-green-600/30' : 'bg-orange-600/20 text-orange-300 ring-1 ring-orange-600/30'}`}>
+                      <div key={subExp.id} className="rounded-xl border border-neutral-700/50 bg-neutral-800/30 p-3 sm:p-4">
+                        <div className="mb-3 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+                          <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:gap-2">
+                            <h5 className="text-sm sm:text-base font-semibold text-white">{subExp.title}</h5>
+                            <span className={`w-fit rounded-full px-2 py-0.5 text-xs font-medium ${subExp.type === 'CDI' ? 'bg-green-600/20 text-green-300 ring-1 ring-green-600/30' : 'bg-orange-600/20 text-orange-300 ring-1 ring-orange-600/30'}`}>
                               {subExp.type}
                             </span>
                           </div>
                           <div className="text-xs text-neutral-400">{subExp.period}</div>
                         </div>
-                        <p className="mb-3 text-sm text-neutral-300">{subExp.description}</p>
+                        <p className="mb-3 text-xs sm:text-sm text-neutral-300">{subExp.description}</p>
                         <ul className="space-y-1">
                           {subExp.missions.map((mission, missionIdx) => (
-                            <li key={missionIdx} className="flex items-start gap-2 text-sm text-neutral-300">
+                            <li key={missionIdx} className="flex items-start gap-2 text-xs sm:text-sm text-neutral-300">
                               <span className="mt-1.5 h-1 w-1 flex-shrink-0 rounded-full bg-neutral-500"></span>
                               <span>{mission}</span>
                             </li>
