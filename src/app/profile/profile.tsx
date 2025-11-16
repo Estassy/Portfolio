@@ -70,11 +70,11 @@ function Profile() {
             {/* top: compact skill tiles */}
             <div className="grid grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-3">
               {[
-                { icon: <Server className="h-4 w-4" />, label: "Back-end", value: "Java Spring" },
-                { icon: <Boxes className="h-4 w-4" />, label: "Front-end", value: "React Angular" },
-                { icon: <Brain className="h-4 w-4" />, label: "DevOps", value: "GitLab CI" },
-                { icon: <Database className="h-4 w-4" />, label: "Bases de données", value: "Postgres" },
-                { icon: <Cloud className="h-4 w-4" />, label: "Cloud", value: "AWS" },
+                { icon: <Server className="h-4 w-4" />, label: "Back-end", value: "Java & plus" },
+                { icon: <Boxes className="h-4 w-4" />, label: "Front-end", value: "Multi-frameworks" },
+                { icon: <Brain className="h-4 w-4" />, label: "DevOps", value: "CI/CD & Cloud" },
+                { icon: <Database className="h-4 w-4" />, label: "Bases de données", value: "SQL & NoSQL" },
+                { icon: <Cloud className="h-4 w-4" />, label: "Cloud", value: "Multi-providers" },
                 { icon: <ClipboardList className="h-4 w-4" />, label: "Méthodo", value: "Agile Scrum" },
               ].map((s) => (
                 <div key={s.label} className="flex flex-col items-center justify-center rounded-lg border border-neutral-800 bg-neutral-950 p-2 sm:p-3 text-center">

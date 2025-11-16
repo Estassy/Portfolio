@@ -13,7 +13,8 @@ function CTA() {
       >
         <h3 className="text-lg sm:text-xl font-semibold">Télécharge mon CV et voyons un projet ensemble</h3>
         <p className="mt-2 max-w-prose text-sm sm:text-base text-neutral-300">
-          Disponible pour des missions full‑stack, cloud et DevOps. J&apos;apprends vite et j&apos;adore livrer.
+          Disponible pour des missions full‑stack, cloud et DevOps. Passionné par la veille technologique, 
+          j&apos;apprends rapidement de nouvelles technologies selon les besoins du projet.
         </p>
         <div className="mt-4 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
           <a href={LINKS.cv} className="inline-flex w-full sm:w-auto items-center justify-center rounded-full bg-white/90 px-4 py-2 text-sm font-semibold text-neutral-900 hover:bg-white">

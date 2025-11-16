@@ -12,6 +12,9 @@ function PanelWithTabs() {
         <TabButton active={tab === "diplomas"} onClick={() => setTab("diplomas")}>
           Diplômes
         </TabButton>
+        <TabButton active={tab === "langues"} onClick={() => setTab("langues")}>
+          Langues
+        </TabButton>
         <TabButton active={tab === "objective"} onClick={() => setTab("objective")}>
           Objectif
         </TabButton>
@@ -44,7 +47,7 @@ function PanelWithTabs() {
               <li>
                 <div className="font-medium text-white">Master : Informatique - Ingénierie des données</div>
                 <div className="mt-1 text-xs text-neutral-400">Université Aix-Marseille, MIAGE | 2023 - 2025</div>
-                <div className="mt-1 text-xs text-green-400">Erasmus | TalTech, Estonie | Sept 2023 - Janv 2024</div>
+                <div className="mt-1 text-xs text-green-400">Erasmus | TalTech, Estonie | Cursus intégralement en anglais | Sept 2023 - Janv 2024</div>
               </li>
 
               <li>
@@ -52,6 +55,30 @@ function PanelWithTabs() {
                 <div className="mt-1 text-xs text-neutral-400">Université Aix-Marseille, UFR Sciences, MIAGE | 2020 - 2023</div>
               </li>
             </ul>
+          </div>
+        )}
+
+        {tab === "langues" && (
+          <div>
+            <p className="mb-3 font-semibold text-neutral-200">Anglais</p>
+            <div className="flex items-center justify-between">
+              <div>
+                <div className="font-medium text-white">Niveau opérationnel</div>
+                <div className="text-xs text-green-400">✓ Validé par Erasmus (TalTech, Estonie)</div>
+                <div className="text-xs text-neutral-400">Cursus intégralement en anglais</div>
+              </div>
+              <div className="flex gap-1">
+                {[...Array(4)].map((_, i) => (
+                  <div key={i} className="h-2 w-2 rounded-full bg-blue-500"></div>
+                ))}
+                <div className="h-2 w-2 rounded-full bg-neutral-600"></div>
+              </div>
+            </div>
+            <div className="mt-4 rounded-md bg-neutral-800 p-2">
+              <div className="text-xs text-neutral-300">
+                <span className="font-medium">Expérience :</span> 5 mois d&apos;études en environnement anglophone
+              </div>
+            </div>
           </div>
         )}
       </motion.div>
