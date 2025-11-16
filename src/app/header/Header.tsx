@@ -64,7 +64,14 @@ function Header({ active, setActive }: { active: string; setActive: (k: string) 
       </nav>
       <motion.div
         initial={false}
-        animate={{ height: isOpen ? 'auto' : 0 }}
+        animate={{
+          height: isOpen ? 'auto' : 0,
+          opacity: isOpen ? 1 : 0
+        }}
+        transition={{
+          duration: 0.3,
+          ease: "easeInOut"
+        }}
         className="overflow-hidden md:hidden"
       >
         <ul className="flex flex-col gap-4 px-4 py-4 bg-neutral-950/90 backdrop-blur">

@@ -98,10 +98,10 @@ function Experiences() {
                   <div className="mb-4 space-y-4 sm:space-y-6">
                     {exp.subExperiences.map((subExp) => (
                       <div key={subExp.id} className="rounded-xl border border-neutral-700/50 bg-neutral-800/30 p-3 sm:p-4">
-                        <div className="mb-3 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
-                          <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:gap-2">
+                        <div className="mb-3">
+                          <div className="flex flex-wrap items-center gap-2 mb-2">
                             <h5 className="text-sm sm:text-base font-semibold text-white">{subExp.title}</h5>
-                            <span className={`w-fit rounded-full px-2 py-0.5 text-xs font-medium ${subExp.type === 'CDI' ? 'bg-green-600/20 text-green-300 ring-1 ring-green-600/30' : 'bg-orange-600/20 text-orange-300 ring-1 ring-orange-600/30'}`}>
+                            <span className={`rounded-full px-2 py-0.5 text-xs font-medium ${subExp.type === 'CDI' ? 'bg-green-600/20 text-green-300 ring-1 ring-green-600/30' : 'bg-orange-600/20 text-orange-300 ring-1 ring-orange-600/30'}`}>
                               {subExp.type}
                             </span>
                           </div>

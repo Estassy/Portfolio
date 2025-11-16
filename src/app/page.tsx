@@ -12,6 +12,7 @@ import Experiences from "./experiences/experiences";
 
 import BackToTop from "./components/BackToTop";
 import { NavigationProvider } from "./components/NavigationContext";
+import Stats from "./components/Stats";
 
 export default function Portfolio() {
   const [active, setActive] = useState("home");
@@ -24,6 +25,7 @@ export default function Portfolio() {
           <Profile />
           <Projects />
           <Skills />
+          <Stats />
           <Experiences />
           <CTA />
           <Contact />

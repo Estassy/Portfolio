@@ -13,8 +13,40 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Marc Estassy BATABA — Portfolio",
-  description: "Portfolio Full-Stack & Cloud",
+  title: "Marc Estassy BATABA — Développeur Full-Stack & Cloud",
+  description: "Développeur Full-Stack Java/Spring Boot & React chez Sopra Steria. 2+ ans d'expérience en développement web, DevOps et méthodologie Agile. Spécialisé en solutions cloud et CI/CD.",
+  keywords: ["Développeur Full-Stack", "Java", "Spring Boot", "React", "DevOps", "Cloud", "Sopra Steria", "FDJ", "Agile", "GitLab CI/CD"],
+  authors: [{ name: "Marc Estassy BATABA" }],
+  creator: "Marc Estassy BATABA",
+  publisher: "Marc Estassy BATABA",
+  openGraph: {
+    title: "Marc Estassy BATABA — Développeur Full-Stack & Cloud",
+    description: "Développeur Full-Stack Java/Spring Boot & React chez Sopra Steria. 2+ ans d'expérience en développement web, DevOps et méthodologie Agile.",
+    url: "https://marc-estassy-bataba.vercel.app",
+    siteName: "Marc Estassy BATABA Portfolio",
+    locale: "fr_FR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Marc Estassy BATABA — Développeur Full-Stack & Cloud",
+    description: "Développeur Full-Stack Java/Spring Boot & React chez Sopra Steria. 2+ ans d'expérience en développement web, DevOps et méthodologie Agile.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  icons: {
+    icon: '/favicon.svg',
+    apple: '/favicon.svg',
+  },
 };
 
 export default function RootLayout({

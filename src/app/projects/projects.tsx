@@ -16,10 +16,19 @@ function Projects() {
         {PROJECTS.map((p) => (
           <motion.article
             key={p.slug}
-            initial={{ opacity: 0, y: 10 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            className="group rounded-2xl border border-neutral-800 bg-neutral-950 p-4 sm:p-5 hover:shadow-xl hover:scale-105 transition-all duration-300"
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{
+              duration: 0.5,
+              delay: PROJECTS.indexOf(p) * 0.1,
+              ease: "easeOut"
+            }}
+            whileHover={{
+              y: -5,
+              transition: { duration: 0.2 }
+            }}
+            className="group rounded-2xl border border-neutral-800 bg-neutral-950 p-4 sm:p-5 shadow-lg hover:shadow-xl hover:border-neutral-700 transition-all duration-300"
           >
             <h3 className="text-base sm:text-lg font-semibold text-white">{p.title}</h3>
             <p className="mt-2 text-sm text-neutral-300">{p.description}</p>

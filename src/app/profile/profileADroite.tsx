@@ -54,35 +54,6 @@ function PanelWithTabs() {
             </ul>
           </div>
         )}
-
-        {tab === "highlights" && (
-          <div>
-            <p className="mb-2 font-semibold text-neutral-200">Faits marquants</p>
-            <ul className="space-y-2 text-neutral-300">
-              <li className="flex items-center gap-2">
-                <span className="h-2 w-2 rounded-full bg-green-500"></span>
-                <span className="text-sm">Mobilit&eacute; acad&eacute;mique en Estonie (TalTech) — cours en anglais</span>
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="h-2 w-2 rounded-full bg-blue-500"></span>
-                <span className="text-sm">Mission client prestigieux (La Fran&ccedil;aise des Jeux)</span>
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="h-2 w-2 rounded-full bg-purple-500"></span>
-                <span className="text-sm">Sp&eacute;cialis&eacute; CI/CD et m&eacute;thodologie Agile SAFe</span>
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="h-2 w-2 rounded-full bg-orange-500"></span>
-                <span className="text-sm">Polyvalent : Java/Spring, Angular/React, Python</span>
-              </li>
-            </ul>
-            <div className="mt-4">
-              <SmoothLink targetId="experiences" className="inline-flex items-center text-sm text-neutral-200 hover:text-white">
-                Voir le d&eacute;tail de mes exp&eacute;riences →
-              </SmoothLink>
-            </div>
-          </div>
-        )}
       </motion.div>
     </div>
   );
