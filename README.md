@@ -1,8 +1,8 @@
-# 🚀 Portfolio - Marc Estassy BATABA
+# Portfolio - Marc Estassy BATABA
 
 > Portfolio moderne et interactif d'un ingénieur logiciel Full-Stack & Cloud
 
-**🌐 [Voir le portfolio en ligne](https://marc-estassy-bataba.vercel.app)**
+**[Voir le portfolio en ligne](https://marc-estassy-bataba.vercel.app)**
 
 [![Next.js](https://img.shields.io/badge/Next.js-16.0.1-black?logo=next.js)](https://nextjs.org/)
 [![React](https://img.shields.io/badge/React-19.2.0-61DAFB?logo=react)](https://reactjs.org/)
@@ -10,17 +10,17 @@
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-4.1.17-38B2AC?logo=tailwind-css)](https://tailwindcss.com/)
 [![Framer Motion](https://img.shields.io/badge/Framer%20Motion-12.23.24-FF0055?logo=framer)](https://www.framer.com/motion/)
 
-## ✨ Fonctionnalités
+## Fonctionnalités
 
-- **🎨 Design moderne** : Interface épurée avec animations fluides
-- **📱 Responsive** : Optimisé pour tous les écrans (mobile, tablette, desktop)
-- **⚡ Performance** : Next.js 16 avec App Router et React 19
-- **🌊 Navigation fluide** : Scroll smooth sans pollution d'URL
-- **🎭 Animations** : Micro-interactions avec Framer Motion
-- **♿ Accessibilité** : Focus states et navigation clavier
-- **🌙 Thème sombre** : Design adapté aux développeurs
+- **Design moderne** : Interface épurée avec animations fluides
+- **Responsive** : Optimisé pour tous les écrans (mobile, tablette, desktop)
+- **Performance** : Next.js 16 avec App Router et React 19
+- **Navigation fluide** : Scroll smooth sans pollution d'URL
+- **Animations** : Micro-interactions avec Framer Motion
+- **Accessibilité** : Focus states et navigation clavier
+- **Thème sombre** : Design adapté aux développeurs
 
-## 🏗️ Architecture
+## Architecture
 
 ### Sections principales
 
@@ -47,7 +47,7 @@ src/app/
 └── footer/              # Pied de page
 ```
 
-## 🛠️ Stack Technique
+## Stack Technique
 
 ### Frontend
 
@@ -63,7 +63,7 @@ src/app/
 - **Lucide React** - Icônes modernes et cohérentes
 - **PostCSS** - Transformation CSS avancée
 
-## 🚀 Démarrage rapide
+## Démarrage rapide
 
 ### Prérequis
 
@@ -106,7 +106,7 @@ npm run build
 npm run start
 ```
 
-## 🎨 Personnalisation
+## Personnalisation
 
 ### Couleurs et thème
 
@@ -123,7 +123,7 @@ Les couleurs sont définies dans `tailwind.config.js` avec une palette neutre mo
 - **Compétences** : Ajuster `src/app/skills/skills.tsx`
 - **Expériences** : Mettre à jour `src/app/experiences/experiencesData.ts`
 
-## 🔧 Scripts Disponibles
+## Scripts Disponibles
 
 ```bash
 npm run dev      # Serveur de développement
@@ -132,7 +132,7 @@ npm run start    # Serveur de production
 npm run lint     # Vérification ESLint
 ```
 
-## 📈 Performances
+## Performances
 
 - **Lighthouse Score** : 90+ sur tous les critères
 - **Core Web Vitals** : Optimisé pour LCP, FID, CLS
@@ -140,11 +140,11 @@ npm run lint     # Vérification ESLint
 - **Images** : Next.js Image optimization
 - **Fonts** : Preload et optimisation automatique
 
-## 🌐 Portfolio en ligne
+## Portfolio en ligne
 
-🚀 **Voir le portfolio déployé :** [https://marc-estassy-bataba.vercel.app](https://marc-estassy-bataba.vercel.app)
+**Voir le portfolio déployé :** [https://marc-estassy-bataba.vercel.app](https://marc-estassy-bataba.vercel.app)
 
-## 🤝 Contribution
+## Contribution
 
 1. Fork le projet
 2. Créer une branche feature (`git checkout -b feature/AmazingFeature`)
@@ -152,11 +152,11 @@ npm run lint     # Vérification ESLint
 4. Push vers la branche (`git push origin feature/AmazingFeature`)
 5. Ouvrir une Pull Request
 
-## 📝 License
+## License
 
 Ce projet est sous licence MIT. Voir `LICENSE` pour plus de détails.
 
-## 📧 Contact
+## Contact
 
 **Marc Estassy BATABA**
 
@@ -166,4 +166,4 @@ Ce projet est sous licence MIT. Voir `LICENSE` pour plus de détails.
 
 ---
 
-⭐ N'hésitez pas à star le projet si il vous a été utile !
+N'hésitez pas à star le projet si il vous a été utile !
