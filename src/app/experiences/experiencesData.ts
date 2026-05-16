@@ -31,6 +31,7 @@ export const ExperiencesData = [
       "GraphQL",
       "Agile/Kanban",
     ],
+    isCurrent: true,
   },
   {
     id: "sopra-steria-group",

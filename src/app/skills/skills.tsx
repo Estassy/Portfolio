@@ -7,7 +7,7 @@ function Skills() {
     {
       title: "Back‑end",
       icon: <Server className="h-4 w-4" />,
-      items: ["Java", "Python", "Spring Boot/Data/Security", "REST", "GraphQL", "JPA/Hibernate"],
+      items: ["Java", "Python", "Spring Boot", "Quarkus", "REST", "GraphQL", "JPA/Hibernate"],
     },
     {
       title: "Front‑end",

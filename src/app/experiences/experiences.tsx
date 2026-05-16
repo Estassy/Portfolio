@@ -42,30 +42,54 @@ function Experiences() {
         {/* Timeline line */}
         <div className="absolute left-3 top-0 bottom-0 w-0.5 bg-gradient-to-b from-neutral-600 via-neutral-700 to-neutral-800 sm:left-4 md:left-8"></div>
 
-        {ExperiencesData.map((exp) => (
-          <motion.div
-            key={exp.id}
-            variants={itemVariants}
-            className="relative mb-12 last:mb-0"
-          >
-            {/* Timeline dot */}
-            <div className={`absolute left-1 top-6 rounded-full border-2 sm:border-4 border-neutral-900 bg-white sm:left-2 md:left-6 ${exp.isGrouped ? 'h-4 w-4 sm:h-5 sm:w-5 ring-2 ring-blue-500/30' : 'h-3 w-3 sm:h-4 sm:w-4'}`}></div>
+        {ExperiencesData.map((exp) => {
+          // Détermination des styles selon l'intensité croissante (faible en montant)
+          const isSogeti = exp.id === 'sogeti';
+          const isSopra = exp.id === 'sopra-steria-group';
+          const isMicropole = exp.id === 'micropole';
+          
+          let dotStyle = 'h-3 w-3 sm:h-3.5 sm:w-3.5 ring-1 ring-blue-500/10 bg-blue-200';
+          let cardStyle = 'border-blue-500/10 bg-gradient-to-br from-blue-950/5 to-neutral-900';
+          let badgeStyle = 'bg-blue-500/10 text-blue-300/80 ring-1 ring-blue-500/10';
 
-            {/* Experience card */}
-            <div className="ml-8 sm:ml-12 md:ml-20">
-              <motion.div
-                whileHover={{ y: -2 }}
-                className={`rounded-2xl border ${exp.isGrouped ? 'border-blue-600/30 bg-gradient-to-br from-blue-950/20 to-neutral-900' : 'border-neutral-800 bg-gradient-to-br from-neutral-950 to-neutral-900'} p-6 shadow-lg transition-shadow hover:shadow-xl`}
-              >
-                {/* Header */}
-                <div className="mb-4 flex flex-col gap-3 md:flex-row md:items-start md:justify-between">
-                  <div>
-                    <div className="mb-1 flex items-center gap-2">
-                      <h3 className="text-xl font-bold text-white">{exp.title}</h3>
-                      <span className={`rounded-full px-2 py-0.5 text-xs font-medium ${exp.isGrouped ? 'bg-blue-600/20 text-blue-300 ring-1 ring-blue-600/30' : 'bg-neutral-800 text-neutral-300'}`}>
-                        {exp.type}
-                      </span>
-                    </div>
+          if (isSogeti) {
+            dotStyle = 'h-4 w-4 sm:h-5 sm:w-5 ring-4 ring-indigo-500/30 bg-indigo-400';
+            cardStyle = 'border-indigo-600/40 bg-gradient-to-br from-indigo-950/30 via-neutral-900/90 to-neutral-900 shadow-indigo-500/10';
+            badgeStyle = 'bg-indigo-600/20 text-indigo-300 ring-1 ring-indigo-600/40';
+          } else if (isSopra) {
+            dotStyle = 'h-4 w-4 sm:h-5 sm:w-5 ring-2 ring-blue-500/25 bg-blue-400';
+            cardStyle = 'border-blue-500/30 bg-gradient-to-br from-blue-950/20 to-neutral-900';
+            badgeStyle = 'bg-blue-600/20 text-blue-300 ring-1 ring-blue-600/30';
+          } else if (isMicropole) {
+            dotStyle = 'h-3.5 w-3.5 sm:h-4 sm:w-4 ring-2 ring-blue-500/15 bg-blue-300';
+            cardStyle = 'border-blue-500/20 bg-gradient-to-br from-blue-950/10 to-neutral-900';
+            badgeStyle = 'bg-blue-500/15 text-blue-300/90 ring-1 ring-blue-500/20';
+          }
+
+          return (
+            <motion.div
+              key={exp.id}
+              variants={itemVariants}
+              className="relative mb-12 last:mb-0"
+            >
+              {/* Timeline dot */}
+              <div className={`absolute left-1 top-6 rounded-full border-2 sm:border-4 border-neutral-900 bg-white sm:left-2 md:left-6 ${dotStyle}`}></div>
+
+              {/* Experience card */}
+              <div className="ml-8 sm:ml-12 md:ml-20">
+                <motion.div
+                  whileHover={{ y: -2 }}
+                  className={`rounded-2xl border ${cardStyle} p-6 shadow-lg transition-all hover:shadow-xl`}
+                >
+                  {/* Header */}
+                  <div className="mb-4 flex flex-col gap-3 md:flex-row md:items-start md:justify-between">
+                    <div>
+                      <div className="mb-1 flex items-center gap-2">
+                        <h3 className="text-xl font-bold text-white">{exp.title}</h3>
+                        <span className={`rounded-full px-2.5 py-0.5 text-xs font-medium ${badgeStyle}`}>
+                          {exp.type}
+                        </span>
+                      </div>
                     <div className="flex items-center gap-4 text-sm text-neutral-400">
                       <div className="flex items-center gap-1">
                         <Building className="h-4 w-4" />
@@ -173,7 +197,8 @@ function Experiences() {
               </motion.div>
             </div>
           </motion.div>
-        ))}
+        );
+      })}
       </motion.div>
 
       {/* CTA bottom */}

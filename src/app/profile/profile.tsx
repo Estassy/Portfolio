@@ -57,17 +57,21 @@ function Profile() {
               BATABA
             </span>
             <span className="mt-2 block text-base font-normal text-neutral-400 sm:text-lg md:text-xl">
-              Software Engineer — Java / Angular
+              Software Engineer — Java (Spring Boot / Quarkus) • React / Angular
             </span>
           </h1>
 
-          <p className="mt-4 sm:mt-6 max-w-prose text-sm sm:text-base text-neutral-400 leading-relaxed">
-            Consultant chez Sogeti en mission chez{" "}
-            <span className="text-neutral-200 font-medium">France Travail</span>, je conçois et déploie
-            des applications Full-Stack (Java Spring Boot / Angular), intègre des API{" "}
-            <span className="text-indigo-300">GraphQL</span> et configure des CMS Headless comme{" "}
-            <span className="text-indigo-300">Directus</span>.
-          </p>
+          <div className="mt-4 sm:mt-6 space-y-4 max-w-prose text-sm sm:text-base text-neutral-400 leading-relaxed">
+            <p>
+              Software Engineer spécialisé en développement Full-Stack Java, je conçois et développe des applications web modernes avec <span className="text-indigo-300 font-medium">Spring Boot, Quarkus, React et Angular</span>.
+            </p>
+            <p>
+              J&apos;interviens sur des architectures Backend performantes, des <span className="text-neutral-200 font-medium">API REST/GraphQL</span> et des interfaces Frontend orientées expérience utilisateur, dans des environnements Agile et CI/CD.
+            </p>
+            <p>
+              Curieux techniquement et orienté qualité logicielle, je m&apos;intéresse également aux problématiques <span className="text-indigo-300 font-medium">Cloud, DevOps et architecture applicative</span>.
+            </p>
+          </div>
 
           <div className="mt-6 sm:mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
             <SmoothLink
@@ -95,8 +99,8 @@ function Profile() {
             {/* top: compact skill tiles */}
             <div className="grid grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-3">
               {[
-                { icon: <Server className="h-4 w-4" />, label: "Back-end", value: "Java & Spring" },
-                { icon: <Boxes className="h-4 w-4" />, label: "Front-end", value: "Angular & React" },
+                { icon: <Server className="h-4 w-4" />, label: "Back-end", value: "Java (Spring / Quarkus)" },
+                { icon: <Boxes className="h-4 w-4" />, label: "Front-end", value: "React & Angular" },
                 { icon: <Brain className="h-4 w-4" />, label: "DevOps", value: "CI/CD & Cloud" },
                 { icon: <Database className="h-4 w-4" />, label: "Bases de données", value: "SQL & NoSQL" },
                 { icon: <Cloud className="h-4 w-4" />, label: "API", value: "REST & GraphQL" },
