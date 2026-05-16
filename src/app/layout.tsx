@@ -13,15 +13,15 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Marc Estassy BATABA — Développeur Full-Stack & Cloud",
-  description: "Développeur Full-Stack Java/Spring Boot & React chez Sopra Steria. 2+ ans d'expérience en développement web, DevOps et méthodologie Agile. Spécialisé en solutions cloud et CI/CD.",
-  keywords: ["Développeur Full-Stack", "Java", "Spring Boot", "React", "DevOps", "Cloud", "Sopra Steria", "FDJ", "Agile", "GitLab CI/CD"],
+  title: "Marc Estassy BATABA — Software Engineer Java / Angular",
+  description: "Software Engineer Full-Stack chez Sogeti (mission France Travail). 3+ ans d'expérience en Java Spring Boot, Angular, GraphQL, CI/CD et méthodologie Agile.",
+  keywords: ["Software Engineer", "Java", "Spring Boot", "Angular", "GraphQL", "Directus", "Sogeti", "France Travail", "DevOps", "Agile"],
   authors: [{ name: "Marc Estassy BATABA" }],
   creator: "Marc Estassy BATABA",
   publisher: "Marc Estassy BATABA",
   openGraph: {
-    title: "Marc Estassy BATABA — Développeur Full-Stack & Cloud",
-    description: "Développeur Full-Stack Java/Spring Boot & React chez Sopra Steria. 2+ ans d'expérience en développement web, DevOps et méthodologie Agile.",
+    title: "Marc Estassy BATABA — Software Engineer Java / Angular",
+    description: "Software Engineer Full-Stack chez Sogeti en mission France Travail. Java Spring Boot, Angular, GraphQL, CI/CD.",
     url: "https://marc-estassy-bataba.vercel.app",
     siteName: "Marc Estassy BATABA Portfolio",
     locale: "fr_FR",
@@ -29,8 +29,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Marc Estassy BATABA — Développeur Full-Stack & Cloud",
-    description: "Développeur Full-Stack Java/Spring Boot & React chez Sopra Steria. 2+ ans d'expérience en développement web, DevOps et méthodologie Agile.",
+    title: "Marc Estassy BATABA — Software Engineer Java / Angular",
+    description: "Software Engineer Full-Stack chez Sogeti en mission France Travail. Java Spring Boot, Angular, GraphQL, CI/CD.",
   },
   robots: {
     index: true,

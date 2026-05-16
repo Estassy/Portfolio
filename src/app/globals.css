@@ -1,15 +1,12 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  --accent: #6366f1;
+  --accent-light: #818cf8;
+  --accent-glow: rgba(99, 102, 241, 0.15);
+  --accent-border: rgba(99, 102, 241, 0.3);
 }
 
 body {
@@ -22,29 +19,51 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Accent selection */
+::selection {
+  background: rgba(99, 102, 241, 0.3);
+  color: #fff;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #6366f1;
+}
+
+/* Glow animation */
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.8; }
+}
+
+.accent-glow {
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+
 /* Mobile optimizations */
 @media (max-width: 640px) {
-  /* Prevent horizontal scroll on mobile */
   body {
     overflow-x: hidden;
   }
-
-  /* Better touch targets */
-  a,
-  button {
+  a, button {
     min-height: 44px;
     min-width: 44px;
   }
-
-  /* Optimize text for small screens */
-  h1,
-  h2,
-  h3 {
+  h1, h2, h3 {
     line-height: 1.2;
   }
 }
 
-/* Improve scrolling on iOS */
 * {
   -webkit-overflow-scrolling: touch;
 }

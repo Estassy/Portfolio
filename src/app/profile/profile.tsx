@@ -5,8 +5,9 @@ import {
   ClipboardList,
   Cloud,
   Database,
-  FileDown,
+  MapPin,
   Server,
+  Briefcase,
 } from "lucide-react";
 import { motion } from "framer-motion";
 import PanelWithTabs from "./profileADroite";
@@ -14,73 +15,100 @@ import SmoothLink from "../components/SmoothLink";
 
 function Profile() {
   return (
-    <section id="home" className="py-8 sm:py-12 md:py-16 lg:py-24">
+    <section id="home" className="relative py-8 sm:py-12 md:py-16 lg:py-24 overflow-hidden">
+      {/* Background accent glow */}
+      <div className="pointer-events-none absolute -top-32 -left-32 h-[500px] w-[500px] rounded-full bg-indigo-600/10 blur-[120px] accent-glow" />
+      <div className="pointer-events-none absolute -bottom-32 -right-32 h-[400px] w-[400px] rounded-full bg-violet-600/8 blur-[100px]" />
+
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="mx-auto grid max-w-5xl grid-cols-1 items-center gap-8 lg:gap-10 lg:grid-cols-2"
+        className="relative mx-auto grid max-w-5xl grid-cols-1 items-center gap-8 lg:gap-10 lg:grid-cols-2"
       >
         <div>
-          <p className="mb-3 text-xs uppercase tracking-[0.2em] text-neutral-400">
-            Software Engineer • Full‑Stack • Consultant
-          </p>
-          <h1 className="text-2xl font-bold leading-tight sm:text-3xl md:text-4xl lg:text-5xl">
-            <span className="block">
-              Marc <span className="text-neutral-400">Estassy</span>
+          {/* Avatar + status line */}
+          <div className="mb-5 flex items-center gap-4">
+            <div className="relative shrink-0">
+              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-indigo-500 to-violet-600 text-lg font-bold text-white shadow-lg shadow-indigo-500/25">
+                MB
+              </div>
+              <span className="absolute -bottom-1 -right-1 h-4 w-4 rounded-full border-2 border-neutral-950 bg-emerald-400" title="Disponible" />
+            </div>
+            <div>
+              <p className="text-xs uppercase tracking-[0.2em] text-neutral-500">
+                Software Engineer • Full‑Stack • Consultant
+              </p>
+              <div className="mt-1 flex items-center gap-2 text-xs text-neutral-400">
+                <Briefcase className="h-3 w-3 text-indigo-400" />
+                <span className="font-medium text-indigo-300">Sogeti · CDI</span>
+                <span className="text-neutral-600">·</span>
+                <MapPin className="h-3 w-3" />
+                <span>Aix-en-Provence</span>
+              </div>
+            </div>
+          </div>
+
+          <h1 className="text-3xl font-bold leading-tight sm:text-4xl md:text-5xl lg:text-6xl">
+            <span className="block text-white">
+              Marc Estassy
             </span>
-            <span className="block bg-gradient-to-r from-white to-neutral-300 bg-clip-text text-transparent">
+            <span className="block bg-gradient-to-r from-indigo-400 via-violet-400 to-purple-400 bg-clip-text text-transparent">
               BATABA
             </span>
-            <span className="block text-base font-normal text-neutral-300 sm:text-lg md:text-xl lg:text-2xl">
+            <span className="mt-2 block text-base font-normal text-neutral-400 sm:text-lg md:text-xl">
               Software Engineer — Java / Angular
             </span>
-            <div className="mt-3 flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-3">
-              <span className="inline-flex w-fit items-center rounded-full bg-blue-600/20 px-2.5 py-0.5 text-xs font-medium text-blue-300 ring-1 ring-blue-600/30">Sogeti · CDI</span>
-              <span className="text-xs text-neutral-400">Mission France Travail · Aix-en-Provence</span>
-            </div>
           </h1>
-          <p className="mt-4 sm:mt-6 max-w-prose text-sm sm:text-base text-neutral-300">
-            Consultant chez Sogeti en mission chez France Travail, je conçois et déploie des applications
-            Full-Stack (Java Spring Boot / Angular), intègre des API GraphQL et configure des CMS Headless
-            comme Directus, avec une approche Clean Code, CI/CD et Agile.
+
+          <p className="mt-4 sm:mt-6 max-w-prose text-sm sm:text-base text-neutral-400 leading-relaxed">
+            Consultant chez Sogeti en mission chez{" "}
+            <span className="text-neutral-200 font-medium">France Travail</span>, je conçois et déploie
+            des applications Full-Stack (Java Spring Boot / Angular), intègre des API{" "}
+            <span className="text-indigo-300">GraphQL</span> et configure des CMS Headless comme{" "}
+            <span className="text-indigo-300">Directus</span>.
           </p>
+
           <div className="mt-6 sm:mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
             <SmoothLink
               targetId="projects"
-              className="inline-flex items-center rounded-full bg-white/90 px-4 py-2 text-sm font-semibold text-neutral-900 hover:bg-white"
+              className="inline-flex items-center rounded-full bg-indigo-600 px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-indigo-500/25 hover:bg-indigo-500 transition-colors"
             >
               Voir mes projets <ArrowRight className="ml-2 h-4 w-4" />
             </SmoothLink>
             <SmoothLink
               targetId="experiences"
-              className="inline-flex items-center rounded-full border border-neutral-700 px-4 py-2 text-sm text-neutral-200 hover:bg-neutral-900"
+              className="inline-flex items-center rounded-full border border-neutral-700 px-5 py-2.5 text-sm text-neutral-300 hover:border-indigo-600/50 hover:text-white transition-colors"
             >
-              <FileDown className="mr-2 h-4 w-4" /> Mon parcours
+              Mon parcours
             </SmoothLink>
           </div>
         </div>
+
         <div className="relative">
           <motion.div
             initial={{ opacity: 0, y: 6 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.08, duration: 0.45 }}
-            className="rounded-2xl border border-neutral-800 bg-gradient-to-br from-neutral-900 to-neutral-950 p-4 sm:p-6 shadow-2xl"
+            className="rounded-2xl border border-neutral-800 bg-gradient-to-br from-neutral-900 to-neutral-950 p-4 sm:p-6 shadow-2xl shadow-black/50 ring-1 ring-white/5"
           >
             {/* top: compact skill tiles */}
             <div className="grid grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-3">
               {[
-                { icon: <Server className="h-4 w-4" />, label: "Back-end", value: "Java & plus" },
-                { icon: <Boxes className="h-4 w-4" />, label: "Front-end", value: "Multi-frameworks" },
+                { icon: <Server className="h-4 w-4" />, label: "Back-end", value: "Java & Spring" },
+                { icon: <Boxes className="h-4 w-4" />, label: "Front-end", value: "Angular & React" },
                 { icon: <Brain className="h-4 w-4" />, label: "DevOps", value: "CI/CD & Cloud" },
                 { icon: <Database className="h-4 w-4" />, label: "Bases de données", value: "SQL & NoSQL" },
-                { icon: <Cloud className="h-4 w-4" />, label: "Cloud", value: "Multi-providers" },
+                { icon: <Cloud className="h-4 w-4" />, label: "API", value: "REST & GraphQL" },
                 { icon: <ClipboardList className="h-4 w-4" />, label: "Méthodo", value: "Agile/Kanban" },
               ].map((s) => (
-                <div key={s.label} className="flex flex-col items-center justify-center rounded-lg border border-neutral-800 bg-neutral-950 p-2 sm:p-3 text-center">
-                  <div className="mb-1 text-neutral-400">{s.icon}</div>
-                  <div className="text-xs uppercase tracking-wider text-neutral-400 hidden sm:block">{s.label}</div>
-                  <div className="mt-1 text-xs sm:text-sm font-semibold text-white">{s.value}</div>
+                <div
+                  key={s.label}
+                  className="group flex flex-col items-center justify-center rounded-xl border border-neutral-800 bg-neutral-950 p-2 sm:p-3 text-center transition-all hover:border-indigo-600/40 hover:bg-indigo-950/20"
+                >
+                  <div className="mb-1 text-neutral-500 group-hover:text-indigo-400 transition-colors">{s.icon}</div>
+                  <div className="text-xs uppercase tracking-wider text-neutral-500 hidden sm:block group-hover:text-neutral-400 transition-colors">{s.label}</div>
+                  <div className="mt-1 text-xs sm:text-sm font-semibold text-neutral-200">{s.value}</div>
                 </div>
               ))}
             </div>
@@ -92,6 +120,3 @@ function Profile() {
   );
 }
 export default Profile;
-
-
-

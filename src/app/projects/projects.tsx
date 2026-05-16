@@ -6,11 +6,16 @@ import { motion } from "framer-motion";
 function Projects() {
   return (
     <section id="projects" className="scroll-mt-24 py-8 sm:py-12 md:py-16">
-      <div className="mb-6 sm:mb-8 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
-        <h2 className="text-xl sm:text-2xl md:text-3xl font-bold">Projets</h2>
-        <a href={LINKS.github} target="_blank" className="text-sm text-neutral-400 hover:text-white" rel="noreferrer">
-          Voir tous les repos →
-        </a>
+      <div className="mb-6 sm:mb-8">
+        <div className="flex items-end justify-between">
+          <div>
+            <p className="mb-1 text-xs font-mono text-indigo-400 tracking-widest uppercase">01. Work</p>
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-white">Projets</h2>
+          </div>
+          <a href={LINKS.github} target="_blank" className="text-sm text-neutral-500 hover:text-indigo-300 transition-colors" rel="noreferrer">
+            Tous les repos →
+          </a>
+        </div>
       </div>
       <div className="grid gap-4 sm:gap-6 sm:grid-cols-2">
         {PROJECTS.map((p) => {

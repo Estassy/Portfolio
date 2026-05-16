@@ -26,9 +26,10 @@ function Experiences() {
 
   return (
     <section id="experiences" className="scroll-mt-24 py-8 sm:py-12 md:py-16">
-      <div className="mb-8 sm:mb-12 text-center">
-        <h2 className="mb-4 text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold">Expériences Professionnelles</h2>
-        <p className="text-sm sm:text-base text-neutral-400">3+ ans d&apos;exp&eacute;rience en d&eacute;veloppement full&ndash;stack, actuellement en CDI chez Sogeti (mission France Travail).</p>
+      <div className="mb-8 sm:mb-12">
+        <p className="mb-1 text-xs font-mono text-indigo-400 tracking-widest uppercase">02. Parcours</p>
+        <h2 className="mb-3 text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold">Expériences Professionnelles</h2>
+        <p className="text-sm sm:text-base text-neutral-500">3+ ans d&apos;expérience en développement full–stack, actuellement en CDI chez Sogeti (mission France Travail).</p>
       </div>
 
       <motion.div

@@ -1,3 +1,4 @@
+"use client";
 import { motion } from "framer-motion";
 import { Brain, ClipboardList, Database, BookOpen, HardDrive, Monitor, Server, Wrench, FlaskConical } from "lucide-react";
 
@@ -61,7 +62,10 @@ function Skills() {
 
   return (
     <section id="skills" className="scroll-mt-24 py-8 sm:py-12 md:py-16">
-      <h2 className="mb-4 sm:mb-6 text-xl sm:text-2xl md:text-3xl font-bold">Compétences</h2>
+      <div className="mb-6 sm:mb-10">
+        <p className="mb-1 text-xs font-mono text-indigo-400 tracking-widest uppercase">03. Stack</p>
+        <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-white">Compétences</h2>
+      </div>
       <motion.div
         variants={container}
         initial="hidden"
@@ -73,17 +77,17 @@ function Skills() {
           <motion.div
             key={cat.title}
             variants={item}
-            className="rounded-2xl border border-neutral-800 bg-neutral-950 p-4 sm:p-5 transition group hover:border-neutral-700 hover:bg-neutral-900/90 focus-within:border-neutral-600"
+            className="group rounded-2xl border border-neutral-800 bg-neutral-950 p-4 sm:p-5 transition-all hover:border-indigo-600/40 hover:bg-indigo-950/10 hover:shadow-lg hover:shadow-indigo-500/5"
           >
-            <div className="mb-3 flex items-center gap-2 text-neutral-300">
-              {cat.icon}
-              <h3 className="text-xs sm:text-sm font-semibold tracking-wide uppercase">{cat.title}</h3>
+            <div className="mb-3 flex items-center gap-2">
+              <span className="text-neutral-600 group-hover:text-indigo-400 transition-colors">{cat.icon}</span>
+              <h3 className="text-xs sm:text-sm font-semibold tracking-wide uppercase text-neutral-400 group-hover:text-neutral-200 transition-colors">{cat.title}</h3>
             </div>
             <div className="flex flex-wrap gap-2">
               {cat.items.map((s) => (
                 <span
                   key={s}
-                  className="rounded-full border border-neutral-800 bg-neutral-900 px-2.5 py-1 text-xs text-neutral-300 hover:border-neutral-700 hover:bg-neutral-800/80 transition-colors"
+                  className="rounded-full border border-neutral-800 bg-neutral-900 px-2.5 py-1 text-xs text-neutral-400 hover:border-indigo-600/50 hover:bg-indigo-950/30 hover:text-indigo-300 transition-all cursor-default"
                 >
                   {s}
                 </span>
