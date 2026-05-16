@@ -24,7 +24,7 @@ function Profile() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="relative mx-auto grid max-w-5xl grid-cols-1 items-center gap-8 lg:gap-10 lg:grid-cols-2"
+        className="relative mx-auto grid max-w-6xl grid-cols-1 items-center gap-8 lg:gap-12 xl:gap-16 lg:grid-cols-2 px-4 sm:px-6"
       >
         <div>
           {/* Avatar + status line */}
@@ -49,19 +49,17 @@ function Profile() {
             </div>
           </div>
 
-          <h1 className="text-3xl font-bold leading-tight sm:text-4xl md:text-5xl lg:text-6xl">
-            <span className="block text-white">
-              Marc Estassy
-            </span>
-            <span className="block bg-gradient-to-r from-indigo-400 via-violet-400 to-purple-400 bg-clip-text text-transparent">
+          <h1 className="text-3xl font-bold leading-tight sm:text-4xl md:text-5xl lg:text-6xl tracking-tight">
+            <span className="text-white">Marc Estassy</span>{" "}
+            <span className="bg-gradient-to-r from-indigo-400 via-violet-400 to-purple-400 bg-clip-text text-transparent">
               BATABA
             </span>
-            <span className="mt-2 block text-base font-normal text-neutral-400 sm:text-lg md:text-xl">
-              Software Engineer — Java (Spring Boot / Quarkus) • React / Angular
-            </span>
           </h1>
+          <p className="mt-3 text-base font-medium text-neutral-300 sm:text-lg md:text-xl">
+            Software Engineer — Java (Spring Boot / Quarkus) • React / Angular
+          </p>
 
-          <div className="mt-4 sm:mt-6 space-y-4 max-w-prose text-sm sm:text-base text-neutral-400 leading-relaxed">
+          <div className="mt-4 sm:mt-5 space-y-3 max-w-prose text-sm sm:text-base text-neutral-400 leading-relaxed">
             <p>
               Software Engineer spécialisé en développement Full-Stack Java, je conçois et développe des applications web modernes avec <span className="text-indigo-300 font-medium">Spring Boot, Quarkus, React et Angular</span>.
             </p>

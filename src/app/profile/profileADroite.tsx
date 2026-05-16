@@ -7,7 +7,7 @@ function PanelWithTabs() {
   const [tab, setTab] = useState<string>("diplomas");
 
   return (
-    <div className="mt-6">
+    <div className="mt-5">
       <div className="flex items-center gap-2">
         <TabButton active={tab === "diplomas"} onClick={() => setTab("diplomas")}>
           Diplômes
@@ -26,7 +26,7 @@ function PanelWithTabs() {
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: -6 }}
         transition={{ duration: 0.28 }}
-        className="mt-4 rounded-lg bg-neutral-900 p-4 text-sm text-neutral-300"
+        className="mt-3 rounded-lg bg-neutral-900 p-4 text-sm text-neutral-300"
       >
         {tab === "objective" && (
           <div>
@@ -42,8 +42,8 @@ function PanelWithTabs() {
 
         {tab === "diplomas" && (
           <div>
-            <p className="mb-3 font-semibold text-neutral-200">Diplômes</p>
-            <ul className="space-y-4 text-neutral-300">
+            <p className="mb-2 font-semibold text-neutral-200">Diplômes</p>
+            <ul className="space-y-3 text-neutral-300">
               <li>
                 <div className="font-medium text-white">Master : Informatique - Ingénierie des données</div>
                 <div className="mt-1 text-xs text-neutral-400">Université Aix-Marseille, MIAGE | 2023 - 2025</div>
