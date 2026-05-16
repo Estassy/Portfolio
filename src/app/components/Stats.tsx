@@ -14,17 +14,17 @@ function Stats() {
                 <Stat
                     icon={<Calendar className="h-5 w-5" />}
                     label="Expérience"
-                    value="2+ ans"
+                    value="3+ ans"
                 />
                 <Stat
                     icon={<Users className="h-5 w-5" />}
                     label="Entreprises"
-                    value="3"
+                    value="4"
                 />
                 <Stat
                     icon={<Code className="h-5 w-5" />}
                     label="Technologies"
-                    value="15+"
+                    value="20+"
                 />
                 <Stat
                     icon={<Trophy className="h-5 w-5" />}

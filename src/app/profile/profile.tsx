@@ -23,7 +23,7 @@ function Profile() {
       >
         <div>
           <p className="mb-3 text-xs uppercase tracking-[0.2em] text-neutral-400">
-            Full‑Stack • Cloud • DevOps
+            Software Engineer • Full‑Stack • Consultant
           </p>
           <h1 className="text-2xl font-bold leading-tight sm:text-3xl md:text-4xl lg:text-5xl">
             <span className="block">
@@ -33,17 +33,17 @@ function Profile() {
               BATABA
             </span>
             <span className="block text-base font-normal text-neutral-300 sm:text-lg md:text-xl lg:text-2xl">
-              Ingénieur Logiciel — Full‑Stack & Cloud
+              Software Engineer — Java / Angular
             </span>
             <div className="mt-3 flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-3">
-              <span className="inline-flex w-fit items-center rounded-full bg-green-600/20 px-2.5 py-0.5 text-xs font-medium text-green-300 ring-1 ring-green-600/30">Open to work</span>
-              <span className="text-xs text-neutral-400">Disponible pour missions & projets</span>
+              <span className="inline-flex w-fit items-center rounded-full bg-blue-600/20 px-2.5 py-0.5 text-xs font-medium text-blue-300 ring-1 ring-blue-600/30">Sogeti · CDI</span>
+              <span className="text-xs text-neutral-400">Mission France Travail · Aix-en-Provence</span>
             </div>
           </h1>
           <p className="mt-4 sm:mt-6 max-w-prose text-sm sm:text-base text-neutral-300">
-            J'aide à concevoir et déployer des applications web performantes, du back-end Java/Spring
-            au front avec des frameworks modernes <span className="whitespace-nowrap">(React / Angular)</span>,
-            avec une approche DevOps orientée qualité, automatisation et delivery.
+            Consultant chez Sogeti en mission chez France Travail, je conçois et déploie des applications
+            Full-Stack (Java Spring Boot / Angular), intègre des API GraphQL et configure des CMS Headless
+            comme Directus, avec une approche Clean Code, CI/CD et Agile.
           </p>
           <div className="mt-6 sm:mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
             <SmoothLink
@@ -75,7 +75,7 @@ function Profile() {
                 { icon: <Brain className="h-4 w-4" />, label: "DevOps", value: "CI/CD & Cloud" },
                 { icon: <Database className="h-4 w-4" />, label: "Bases de données", value: "SQL & NoSQL" },
                 { icon: <Cloud className="h-4 w-4" />, label: "Cloud", value: "Multi-providers" },
-                { icon: <ClipboardList className="h-4 w-4" />, label: "Méthodo", value: "Agile Scrum" },
+                { icon: <ClipboardList className="h-4 w-4" />, label: "Méthodo", value: "Agile/Kanban" },
               ].map((s) => (
                 <div key={s.label} className="flex flex-col items-center justify-center rounded-lg border border-neutral-800 bg-neutral-950 p-2 sm:p-3 text-center">
                   <div className="mb-1 text-neutral-400">{s.icon}</div>

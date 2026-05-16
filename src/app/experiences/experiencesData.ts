@@ -1,12 +1,45 @@
 export const ExperiencesData = [
   {
+    id: "sogeti",
+    title: "Software Engineer – Java / Angular",
+    company: "Sogeti",
+    type: "CDI",
+    location: "Aix-en-Provence",
+    period: "Mai 2026 — Aujourd'hui",
+    duration: "En cours",
+    description:
+      "Consultant au sein de l'unité Digital de Sogeti, en mission chez France Travail sur la modernisation de services numériques.",
+    missions: [
+      "Développement Full-Stack (Backend Java Spring Boot / Frontend Angular)",
+      "Mise en place et configuration du CMS Headless Directus pour la gestion de contenu dynamique",
+      "Conception d'API REST et intégration de services via GraphQL",
+      "Participation aux évolutions techniques dans un environnement Agile/Kanban",
+      "Focus sur la qualité logicielle, le Clean Code et le CI/CD",
+    ],
+    technologies: [
+      "Java 17",
+      "Spring Boot",
+      "Angular",
+      "Directus",
+      "GraphQL",
+      "PostgreSQL",
+      "GitLab CI/CD",
+    ],
+    highlights: [
+      "Mission France Travail",
+      "CMS Headless Directus",
+      "GraphQL",
+      "Agile/Kanban",
+    ],
+  },
+  {
     id: "sopra-steria-group",
     title: "Développeur Full‑Stack",
     company: "SOPRA Steria",
     type: "Évolution professionnelle",
     location: "Aix‑en‑Provence",
-    period: "Septembre 2024 — Actuellement",
-    duration: "1 an 2 mois",
+    period: "Septembre 2024 — Avril 2026",
+    duration: "1 an 7 mois",
     client: "La Française des Jeux (FDJ)",
     description:
       "Parcours complet chez Sopra Steria : de l'alternance au CDI sur la mission FDJ",
@@ -16,8 +49,8 @@ export const ExperiencesData = [
         id: "sopra-steria-cdi",
         title: "CDI - Nouvelle équipe",
         type: "CDI",
-        period: "Octobre 2025 — Actuellement",
-        duration: "En cours",
+        period: "Octobre 2025 — Avril 2026",
+        duration: "7 mois",
         description:
           "Poursuite de la mission FDJ dans une nouvelle équipe avec un périmètre fonctionnel élargi",
         missions: [
@@ -25,11 +58,11 @@ export const ExperiencesData = [
           "Analyse des besoins fonctionnels et contribution aux ateliers de cadrage",
           "Collaboration quotidienne avec les équipes FDJ (métier, PO, QA...)",
           "Workflows Agile SAFe et coordination multi-équipes",
-          "Évolution et maintenance d'applications métier à forte valeur ajoutée",
-          "Montée en compétences sur de nouvelles technologies (détails à venir)",
+          "Évolution et maintenance d'applications métier Java/Spring Boot à forte valeur ajoutée",
+          "Contribution à l'amélioration de la qualité logicielle (revues de code, Sonar, CI/CD)",
         ],
         highlights: [
-          "Évolution vers CDI",
+          "Évolution Alternance → CDI",
           "Nouvelle équipe",
           "Périmètre élargi",
         ],

@@ -24,9 +24,9 @@ export default function Portfolio() {
         <main className="mx-auto max-w-6xl px-4 sm:px-6">
           <Profile />
           <Projects />
+          <Experiences />
           <Skills />
           <Stats />
-          <Experiences />
           <CTA />
           <Contact />
         </main>

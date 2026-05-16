@@ -6,7 +6,7 @@ function Skills() {
     {
       title: "Back‑end",
       icon: <Server className="h-4 w-4" />,
-      items: ["Java", "Python", "Spring Boot/Data/Security", "REST", "JPA/Hibernate"],
+      items: ["Java", "Python", "Spring Boot/Data/Security", "REST", "GraphQL", "JPA/Hibernate"],
     },
     {
       title: "Front‑end",
@@ -26,7 +26,7 @@ function Skills() {
     {
       title: "CMS",
       icon: <BookOpen className="h-4 w-4" />,
-      items: ["Drupal"],
+      items: ["Drupal", "Directus"],
     },
     {
       title: "Tests & Qualité",
@@ -36,7 +36,7 @@ function Skills() {
     {
       title: "Méthodologies",
       icon: <ClipboardList className="h-4 w-4" />,
-      items: ["Agile (Scrum – cert. EXIN)", "PRINCE2 Foundation"],
+      items: ["Agile (Scrum – cert. EXIN)", "Agile/Kanban", "PRINCE2 Foundation"],
     },
     {
       title: "Systèmes",

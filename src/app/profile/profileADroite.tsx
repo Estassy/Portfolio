@@ -30,8 +30,8 @@ function PanelWithTabs() {
       >
         {tab === "objective" && (
           <div>
-            <p className="mb-2 font-semibold text-neutral-200">Objectif 2025</p>
-            <p>Monter en comp&eacute;tence Cloud & IA en partant d&apos;un socle Full‑Stack robuste.</p>
+            <p className="mb-2 font-semibold text-neutral-200">Objectif 2026</p>
+            <p>Approfondir mon expertise en architecture logicielle et progresser sur des projets à forte valeur ajoutée, en environnement Agile.</p>
             <div className="mt-3 flex gap-2">
               <SmoothLink targetId="contact" className="inline-flex items-center rounded-full bg-white/90 px-3 py-1 text-sm font-semibold text-neutral-900">
                 Contactez‑moi
