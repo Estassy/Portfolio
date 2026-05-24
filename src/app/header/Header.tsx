@@ -3,16 +3,21 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import IconLink from "../links/iconLink";
 import { LINKS } from "../links/linksData";
+import { useLang } from "../i18n/LangContext";
+import LangToggle from "../components/LangToggle";
 
 function Header({ active, setActive }: { active: string; setActive: (k: string) => void }) {
   const [isOpen, setIsOpen] = useState(false);
+  const { t } = useLang();
+
   const items = [
-    { id: "home", label: "Accueil" },
-    { id: "projects", label: "Projets" },
-    { id: "skills", label: "Compétences" },
-    { id: "experiences", label: "Expériences" },
-    { id: "contact", label: "Contact" },
+    { id: "home", label: t.nav.home },
+    { id: "projects", label: t.nav.projects },
+    { id: "skills", label: t.nav.skills },
+    { id: "experiences", label: t.nav.experiences },
+    { id: "contact", label: t.nav.contact },
   ];
+
   return (
     <header className="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-neutral-950/60">
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-4 sm:px-6 py-3">
@@ -46,6 +51,7 @@ function Header({ active, setActive }: { active: string; setActive: (k: string) 
           ))}
         </ul>
         <div className="flex items-center gap-3">
+          <LangToggle />
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="md:hidden p-2 text-neutral-300 hover:text-white"

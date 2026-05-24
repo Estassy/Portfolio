@@ -1,51 +1,54 @@
 "use client";
 import { motion } from "framer-motion";
 import { Brain, ClipboardList, Database, BookOpen, HardDrive, Monitor, Server, Wrench, FlaskConical } from "lucide-react";
+import { useLang } from "../i18n/LangContext";
 
 function Skills() {
+  const { t } = useLang();
+
   const categories = [
     {
-      title: "Back‑end",
+      title: t.skills.categories.backend,
       icon: <Server className="h-4 w-4" />,
       items: ["Java", "Python", "Spring Boot", "Quarkus", "REST", "GraphQL", "JPA/Hibernate"],
     },
     {
-      title: "Front‑end",
+      title: t.skills.categories.frontend,
       icon: <Monitor className="h-4 w-4" />,
       items: ["Angular", "React", "Vue.js", "TypeScript", "JavaScript", "Bootstrap"],
     },
     {
-      title: "DevOps",
+      title: t.skills.categories.devops,
       icon: <Wrench className="h-4 w-4" />,
       items: ["Git", "GitLab CI/CD", "Docker", "Bash", "Rancher"],
     },
     {
-      title: "Bases de données",
+      title: t.skills.categories.databases,
       icon: <Database className="h-4 w-4" />,
       items: ["PostgreSQL", "MongoDB", "MySQL", "SQL Server", "Neo4j"],
     },
     {
-      title: "CMS",
+      title: t.skills.categories.cms,
       icon: <BookOpen className="h-4 w-4" />,
       items: ["Drupal", "Directus"],
     },
     {
-      title: "Tests & Qualité",
+      title: t.skills.categories.tests,
       icon: <FlaskConical className="h-4 w-4" />,
-      items: ["JUnit", "Jest", "Cypress", "Sonar", "Linting", "Revue de code"],
+      items: ["JUnit", "Jest", "Cypress", "Sonar", "Linting", "Code review"],
     },
     {
-      title: "Méthodologies",
+      title: t.skills.categories.methodologies,
       icon: <ClipboardList className="h-4 w-4" />,
       items: ["Agile (Scrum – cert. EXIN)", "Agile/Kanban", "PRINCE2 Foundation"],
     },
     {
-      title: "Systèmes",
+      title: t.skills.categories.systems,
       icon: <HardDrive className="h-4 w-4" />,
       items: ["Linux", "Windows"],
     },
     {
-      title: "IA / Data",
+      title: t.skills.categories.ai,
       icon: <Brain className="h-4 w-4" />,
       items: ["NLP", "TensorFlow", "PyTorch", "Keras", "scikit-learn", "NumPy", "Pandas", "OpenCV"],
     },
@@ -63,19 +66,19 @@ function Skills() {
   return (
     <section id="skills" className="scroll-mt-24 py-8 sm:py-12 md:py-16">
       <div className="mb-6 sm:mb-10">
-        <p className="mb-1 text-xs font-mono text-indigo-400 tracking-widest uppercase">03. Stack</p>
-        <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-white">Compétences</h2>
+        <p className="mb-1 text-xs font-mono text-indigo-400 tracking-widest uppercase">{t.skills.sectionNum}</p>
+        <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-white">{t.skills.title}</h2>
       </div>
       <motion.div
         variants={container}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
+        viewport={{ once: false, amount: 0 }}
         className="grid gap-4 sm:gap-6 sm:grid-cols-2"
       >
-        {categories.map((cat) => (
+        {categories.map((cat, idx) => (
           <motion.div
-            key={cat.title}
+            key={idx}
             variants={item}
             className="group rounded-2xl border border-neutral-800 bg-neutral-950 p-4 sm:p-5 transition-all hover:border-indigo-600/40 hover:bg-indigo-950/10 hover:shadow-lg hover:shadow-indigo-500/5"
           >

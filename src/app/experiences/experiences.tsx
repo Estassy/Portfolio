@@ -2,10 +2,13 @@
 
 import { motion } from "framer-motion";
 import { Calendar, MapPin, Building, ExternalLink } from "lucide-react";
-import { ExperiencesData } from "./experiencesData";
+import { ExperiencesData, ExperiencesDataEn } from "./experiencesData";
 import SmoothLink from "../components/SmoothLink";
+import { useLang } from "../i18n/LangContext";
 
 function Experiences() {
+  const { t, lang } = useLang();
+  const data = lang === "en" ? ExperiencesDataEn : ExperiencesData;
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -27,9 +30,9 @@ function Experiences() {
   return (
     <section id="experiences" className="scroll-mt-24 py-8 sm:py-12 md:py-16">
       <div className="mb-8 sm:mb-12">
-        <p className="mb-1 text-xs font-mono text-indigo-400 tracking-widest uppercase">02. Parcours</p>
-        <h2 className="mb-3 text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold">Expériences Professionnelles</h2>
-        <p className="text-sm sm:text-base text-neutral-500">3+ ans d&apos;expérience en développement full–stack, actuellement en CDI chez Sogeti (mission France Travail).</p>
+        <p className="mb-1 text-xs font-mono text-indigo-400 tracking-widest uppercase">{t.experiences.sectionNum}</p>
+        <h2 className="mb-3 text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold">{t.experiences.title}</h2>
+        <p className="text-sm sm:text-base text-neutral-500">{t.experiences.subtitle}</p>
       </div>
 
       <motion.div
@@ -42,12 +45,11 @@ function Experiences() {
         {/* Timeline line */}
         <div className="absolute left-3 top-0 bottom-0 w-0.5 bg-gradient-to-b from-neutral-600 via-neutral-700 to-neutral-800 sm:left-4 md:left-8"></div>
 
-        {ExperiencesData.map((exp) => {
-          // Détermination des styles selon l'intensité croissante (faible en montant)
+        {data.map((exp) => {
           const isSogeti = exp.id === 'sogeti';
           const isSopra = exp.id === 'sopra-steria-group';
           const isMicropole = exp.id === 'micropole';
-          
+
           let dotStyle = 'h-3 w-3 sm:h-3.5 sm:w-3.5 ring-1 ring-blue-500/10 bg-blue-200';
           let cardStyle = 'border-blue-500/10 bg-gradient-to-br from-blue-950/5 to-neutral-900';
           let badgeStyle = 'bg-blue-500/10 text-blue-300/80 ring-1 ring-blue-500/10';
@@ -102,7 +104,7 @@ function Experiences() {
                     </div>
                     {exp.client && (
                       <div className="mt-1 text-sm text-neutral-500">
-                        <span className="font-medium">Client :</span> {exp.client}
+                        <span className="font-medium">{t.experiences.client}</span> {exp.client}
                       </div>
                     )}
                   </div>
@@ -115,90 +117,83 @@ function Experiences() {
                   </div>
                 </div>
 
-                {/* Description */}
-                <p className="mb-4 text-neutral-300">{exp.description}</p>
+                  {/* Description */}
+                  <p className="mb-4 text-neutral-300">{exp.description}</p>
 
-                {/* Sub-experiences ou Missions selon le type */}
-                {exp.isGrouped && exp.subExperiences ? (
-                  <div className="mb-4 space-y-4 sm:space-y-6">
-                    {exp.subExperiences.map((subExp) => (
-                      <div key={subExp.id} className="rounded-xl border border-neutral-700/50 bg-neutral-800/30 p-3 sm:p-4">
-                        <div className="mb-3">
-                          <div className="flex flex-wrap items-center gap-2 mb-2">
-                            <h5 className="text-sm sm:text-base font-semibold text-white">{subExp.title}</h5>
-                            <span className={`rounded-full px-2 py-0.5 text-xs font-medium ${subExp.type === 'CDI' ? 'bg-green-600/20 text-green-300 ring-1 ring-green-600/30' : 'bg-orange-600/20 text-orange-300 ring-1 ring-orange-600/30'}`}>
-                              {subExp.type}
-                            </span>
+                  {/* Sub-experiences ou Missions selon le type */}
+                  {exp.isGrouped && exp.subExperiences ? (
+                    <div className="mb-4 space-y-4 sm:space-y-6">
+                      {exp.subExperiences.map((subExp) => (
+                        <div key={subExp.id} className="rounded-xl border border-neutral-700/50 bg-neutral-800/30 p-3 sm:p-4">
+                          <div className="mb-3">
+                            <div className="flex flex-wrap items-center gap-2 mb-2">
+                              <h5 className="text-sm sm:text-base font-semibold text-white">{subExp.title}</h5>
+                              <span className={`rounded-full px-2 py-0.5 text-xs font-medium ${subExp.type === 'CDI' ? 'bg-green-600/20 text-green-300 ring-1 ring-green-600/30' : 'bg-orange-600/20 text-orange-300 ring-1 ring-orange-600/30'}`}>
+                                {subExp.type}
+                              </span>
+                            </div>
+                            <div className="text-xs text-neutral-400">{subExp.period}</div>
                           </div>
-                          <div className="text-xs text-neutral-400">{subExp.period}</div>
+                          <p className="mb-3 text-xs sm:text-sm text-neutral-300">{subExp.description}</p>
+                          <ul className="space-y-1">
+                            {subExp.missions.map((mission, missionIdx) => (
+                              <li key={missionIdx} className="flex items-start gap-2 text-xs sm:text-sm text-neutral-300">
+                                <span className="mt-1.5 h-1 w-1 flex-shrink-0 rounded-full bg-neutral-500"></span>
+                                <span>{mission}</span>
+                              </li>
+                            ))}
+                          </ul>
                         </div>
-                        <p className="mb-3 text-xs sm:text-sm text-neutral-300">{subExp.description}</p>
-                        <ul className="space-y-1">
-                          {subExp.missions.map((mission, missionIdx) => (
-                            <li key={missionIdx} className="flex items-start gap-2 text-xs sm:text-sm text-neutral-300">
-                              <span className="mt-1.5 h-1 w-1 flex-shrink-0 rounded-full bg-neutral-500"></span>
-                              <span>{mission}</span>
-                            </li>
-                          ))}
-                        </ul>
+                      ))}
+                    </div>
+                  ) : (
+                    <div className="mb-4">
+                      <h4 className="mb-3 text-sm font-semibold uppercase tracking-wider text-neutral-400">
+                        {t.experiences.missionsTitle}
+                      </h4>
+                      <ul className="space-y-2">
+                        {exp.missions?.map((mission, idx) => (
+                          <li key={idx} className="flex items-start gap-2 text-sm text-neutral-300">
+                            <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-neutral-500"></span>
+                            <span>{mission}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
 
-                      </div>
-                    ))}
-                  </div>
-                ) : (
+                  {/* Technologies */}
                   <div className="mb-4">
                     <h4 className="mb-3 text-sm font-semibold uppercase tracking-wider text-neutral-400">
-                      Missions & Réalisations
+                      {t.experiences.technologiesTitle}
                     </h4>
-                    <ul className="space-y-2">
-                      {exp.missions?.map((mission, idx) => (
-                        <li key={idx} className="flex items-start gap-2 text-sm text-neutral-300">
-                          <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-neutral-500"></span>
-                          <span>{mission}</span>
-                        </li>
+                    <div className="flex flex-wrap gap-2">
+                      {exp.technologies.map((tech) => (
+                        <span key={tech} className="rounded-full border border-neutral-700 bg-neutral-900 px-3 py-1 text-xs text-neutral-300">
+                          {tech}
+                        </span>
                       ))}
-                    </ul>
+                    </div>
                   </div>
-                )}
 
-                {/* Technologies */}
-                <div className="mb-4">
-                  <h4 className="mb-3 text-sm font-semibold uppercase tracking-wider text-neutral-400">
-                    Technologies
-                  </h4>
-                  <div className="flex flex-wrap gap-2">
-                    {exp.technologies.map((tech) => (
-                      <span
-                        key={tech}
-                        className="rounded-full border border-neutral-700 bg-neutral-900 px-3 py-1 text-xs text-neutral-300"
-                      >
-                        {tech}
-                      </span>
-                    ))}
+                  {/* Highlights */}
+                  <div>
+                    <h4 className="mb-3 text-sm font-semibold uppercase tracking-wider text-neutral-400">
+                      {t.experiences.highlightsTitle}
+                    </h4>
+                    <div className="flex flex-wrap gap-2">
+                      {exp.highlights.map((highlight) => (
+                        <span key={highlight} className="rounded-full bg-gradient-to-r from-blue-600/20 to-purple-600/20 px-3 py-1 text-xs font-medium text-blue-300 ring-1 ring-blue-600/30">
+                          {highlight}
+                        </span>
+                      ))}
+                    </div>
                   </div>
-                </div>
-
-                {/* Highlights */}
-                <div>
-                  <h4 className="mb-3 text-sm font-semibold uppercase tracking-wider text-neutral-400">
-                    Points clés
-                  </h4>
-                  <div className="flex flex-wrap gap-2">
-                    {exp.highlights.map((highlight) => (
-                      <span
-                        key={highlight}
-                        className="rounded-full bg-gradient-to-r from-blue-600/20 to-purple-600/20 px-3 py-1 text-xs font-medium text-blue-300 ring-1 ring-blue-600/30"
-                      >
-                        {highlight}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </motion.div>
-            </div>
-          </motion.div>
-        );
-      })}
+                </motion.div>
+              </div>
+            </motion.div>
+          );
+        })}
       </motion.div>
 
       {/* CTA bottom */}
@@ -209,14 +204,12 @@ function Experiences() {
         className="mt-12 text-center"
       >
         <div className="rounded-2xl border border-neutral-800 bg-neutral-950 p-6">
-          <p className="mb-4 text-neutral-300">
-            Intéressé par mon parcours ? Discutons de votre prochain projet.
-          </p>
+          <p className="mb-4 text-neutral-300">{t.experiences.cta}</p>
           <SmoothLink
             targetId="contact"
             className="inline-flex items-center rounded-full bg-white/90 px-4 py-2 text-sm font-semibold text-neutral-900 hover:bg-white"
           >
-            Contactez‑moi <ExternalLink className="ml-2 h-4 w-4" />
+            {t.experiences.contactMe} <ExternalLink className="ml-2 h-4 w-4" />
           </SmoothLink>
         </div>
       </motion.div>
