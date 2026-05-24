@@ -111,6 +111,8 @@ export const translations = {
       title: "Contact",
       body: "Discutons d'un projet, d'une opportunité ou d'une collab. Écris‑moi directement :",
       email: "Email",
+      copyEmail: "Copier l'adresse email",
+      copied: "Email copié !",
     },
     // Footer
     footer: {
@@ -228,6 +230,8 @@ export const translations = {
       title: "Contact",
       body: "Let's talk about a project, an opportunity or a collaboration. Reach out directly:",
       email: "Email",
+      copyEmail: "Copy email address",
+      copied: "Email copied!",
     },
     // Footer
     footer: {
