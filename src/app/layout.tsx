@@ -47,6 +47,9 @@ export const metadata: Metadata = {
     icon: '/favicon.svg',
     apple: '/favicon.svg',
   },
+  verification: {
+    google: "z-CcmXPhdZMNcEuWNJ-gpFiCVPHxtiER2usZuMc13Pk",
+  },
 };
 
 import { Analytics } from "@vercel/analytics/react";
