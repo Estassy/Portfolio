@@ -1,41 +1,55 @@
-"use client";
+import ClientShell from "./ClientShell";
 
-import { useState } from "react";
-import Contact from "./contact/contact";
-import Header from "./header/Header";
-import Projects from "./projects/projects";
-import Skills from "./skills/skills";
-import Profile from "./profile/profile";
-import Footer from "./footer/footer";
-import CTA from "./cta/cta";
-import Experiences from "./experiences/experiences";
-
-import BackToTop from "./components/BackToTop";
-import { NavigationProvider } from "./components/NavigationContext";
-import Stats from "./components/Stats";
-import { LangProvider } from "./i18n/LangContext";
-
+/**
+ * Pure Server Component — no "use client".
+ * Next.js prerenders this on the server so all content is in the HTML
+ * that Google crawls, even before JavaScript runs.
+ *
+ * JSON-LD structured data is injected here (server-side) for rich Google
+ * results when someone searches "Marc Estassy BATABA".
+ */
 export default function Portfolio() {
-  const [active, setActive] = useState("home");
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Marc Estassy BATABA",
+    jobTitle: "Software Engineer – Java / Angular",
+    description:
+      "Software Engineer Full-Stack spécialisé en Java Spring Boot, Quarkus, React et Angular. Consultant chez Sogeti en mission France Travail.",
+    url: "https://marc-estassy-bataba.vercel.app",
+    sameAs: [
+      "https://github.com/Estassy",
+      "https://www.linkedin.com/in/marc-estassy-bataba",
+    ],
+    knowsAbout: [
+      "Java",
+      "Spring Boot",
+      "Quarkus",
+      "React",
+      "Angular",
+      "GraphQL",
+      "DevOps",
+      "CI/CD",
+      "Agile",
+    ],
+    worksFor: {
+      "@type": "Organization",
+      name: "Sogeti",
+    },
+    alumniOf: {
+      "@type": "EducationalOrganization",
+      name: "Université Aix-Marseille – MIAGE",
+    },
+  };
 
   return (
-    <LangProvider>
-      <NavigationProvider setActive={setActive}>
-        <div className="min-h-screen bg-neutral-950 text-neutral-100">
-          <Header active={active} setActive={setActive} />
-          <main className="mx-auto max-w-6xl px-4 sm:px-6">
-            <Profile />
-            <Projects />
-            <Experiences />
-            <Skills />
-            <Stats />
-            <CTA />
-            <Contact />
-          </main>
-          <Footer />
-          <BackToTop />
-        </div>
-      </NavigationProvider>
-    </LangProvider>
+    <>
+      {/* JSON-LD for Google rich results */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <ClientShell />
+    </>
   );
 }

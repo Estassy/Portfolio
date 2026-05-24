@@ -5,6 +5,7 @@ import IconLink from "../links/iconLink";
 import { LINKS } from "../links/linksData";
 import { useLang } from "../i18n/LangContext";
 import LangToggle from "../components/LangToggle";
+import ThemeToggle from "../components/ThemeToggle";
 
 function Header({ active, setActive }: { active: string; setActive: (k: string) => void }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -50,7 +51,8 @@ function Header({ active, setActive }: { active: string; setActive: (k: string) 
             </li>
           ))}
         </ul>
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2">
+          <ThemeToggle />
           <LangToggle />
           <button
             onClick={() => setIsOpen(!isOpen)}
