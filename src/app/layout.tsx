@@ -13,24 +13,41 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Marc Estassy BATABA — Software Engineer Java / Angular",
-  description: "Software Engineer Full-Stack chez Sogeti (mission France Travail). 3+ ans d'expérience en Java Spring Boot, Angular, GraphQL, CI/CD et méthodologie Agile.",
-  keywords: ["Software Engineer", "Java", "Spring Boot", "Angular", "GraphQL", "Directus", "Sogeti", "France Travail", "DevOps", "Agile"],
+  metadataBase: new URL("https://marc-estassy-bataba.vercel.app"),
+  title: "Marc Estassy BATABA | Software Engineer Java / Angular",
+  description:
+    "Site officiel de Marc Estassy BATABA, Software Engineer Full-Stack chez Sogeti, en mission chez France Travail. Java Spring Boot, Angular, GraphQL, CI/CD et méthodologie Agile.",
+  keywords: [
+    "Marc Estassy BATABA",
+    "Marc Bataba",
+    "Bataba Marc",
+    "Software Engineer",
+    "Java",
+    "Spring Boot",
+    "Angular",
+    "GraphQL",
+    "Sogeti",
+    "France Travail",
+    "DevOps",
+    "Agile",
+  ],
   authors: [{ name: "Marc Estassy BATABA" }],
   creator: "Marc Estassy BATABA",
   publisher: "Marc Estassy BATABA",
   openGraph: {
-    title: "Marc Estassy BATABA — Software Engineer Java / Angular",
-    description: "Software Engineer Full-Stack chez Sogeti en mission France Travail. Java Spring Boot, Angular, GraphQL, CI/CD.",
-    url: "https://marc-estassy-bataba.vercel.app",
+    title: "Marc Estassy BATABA | Software Engineer Java / Angular",
+    description:
+      "Site officiel de Marc Estassy BATABA, Software Engineer Full-Stack chez Sogeti, en mission chez France Travail. Java Spring Boot, Angular, GraphQL, CI/CD.",
+    url: "/",
     siteName: "Marc Estassy BATABA Portfolio",
     locale: "fr_FR",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Marc Estassy BATABA — Software Engineer Java / Angular",
-    description: "Software Engineer Full-Stack chez Sogeti en mission France Travail. Java Spring Boot, Angular, GraphQL, CI/CD.",
+    title: "Marc Estassy BATABA | Software Engineer Java / Angular",
+    description:
+      "Site officiel de Marc Estassy BATABA, Software Engineer Full-Stack chez Sogeti, en mission chez France Travail. Java Spring Boot, Angular, GraphQL, CI/CD.",
   },
   robots: {
     index: true,

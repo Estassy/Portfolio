@@ -13,9 +13,10 @@ export default function Portfolio() {
     "@context": "https://schema.org",
     "@type": "Person",
     name: "Marc Estassy BATABA",
+    alternateName: ["Marc Bataba", "Bataba Marc"],
     jobTitle: "Software Engineer – Java / Angular",
     description:
-      "Software Engineer Full-Stack spécialisé en Java Spring Boot, Quarkus, React et Angular. Consultant chez Sogeti en mission France Travail.",
+      "Marc Estassy BATABA (Marc Bataba), Software Engineer Full-Stack spécialisé en Java Spring Boot, Angular, GraphQL et CI/CD. Consultant chez Sogeti en mission France Travail.",
     url: "https://marc-estassy-bataba.vercel.app",
     sameAs: [
       "https://github.com/Estassy",
