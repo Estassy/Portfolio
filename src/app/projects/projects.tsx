@@ -1,19 +1,23 @@
 import { ExternalLink, Clock } from "lucide-react";
 import { LINKS } from "../links/linksData";
-import { PROJECTS } from "./projectsData";
+import { PROJECTS_DATA } from "./projectsData";
 import { motion } from "framer-motion";
+import { useLang } from "../i18n/LangContext";
 
 function Projects() {
+  const { t, lang } = useLang();
+  const PROJECTS = PROJECTS_DATA[lang];
+
   return (
     <section id="projects" className="scroll-mt-24 py-8 sm:py-12 md:py-16">
       <div className="mb-6 sm:mb-8">
         <div className="flex items-end justify-between">
           <div>
-            <p className="mb-1 text-xs font-mono text-indigo-400 tracking-widest uppercase">01. Work</p>
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-white">Projets</h2>
+            <p className="mb-1 text-xs font-mono text-indigo-400 tracking-widest uppercase">{t.projects.sectionNum}</p>
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-white">{t.projects.title}</h2>
           </div>
           <a href={LINKS.github} target="_blank" className="text-sm text-neutral-500 hover:text-indigo-300 transition-colors" rel="noreferrer">
-            Tous les repos →
+            {t.projects.allRepos}
           </a>
         </div>
       </div>
@@ -45,46 +49,36 @@ function Projects() {
                 <h3 className="text-base sm:text-lg font-semibold text-white leading-snug">{p.title}</h3>
                 {isWip && (
                   <span className="inline-flex shrink-0 items-center gap-1 rounded-full border border-amber-600/40 bg-amber-600/10 px-2 py-0.5 text-xs font-medium text-amber-400">
-                    <Clock className="h-3 w-3" /> En cours
+                    <Clock className="h-3 w-3" /> {t.projects.wip}
                   </span>
                 )}
               </div>
               <p className="mt-1 text-sm text-neutral-300">{p.description}</p>
               <div className="mt-3 flex flex-wrap gap-2">
-                {p.tags.map((t) => (
-                  <span key={t} className="rounded-full bg-neutral-900 px-2.5 py-1 text-xs text-neutral-300">
-                    {t}
+                {p.tags.map((tag) => (
+                  <span key={tag} className="rounded-full bg-neutral-900 px-2.5 py-1 text-xs text-neutral-300">
+                    {tag}
                   </span>
                 ))}
               </div>
               <div className="mt-4 flex items-center gap-3">
                 {p.repo ? (
-                  <a
-                    href={p.repo}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center text-sm text-neutral-200 hover:text-white"
-                  >
-                    Code <ExternalLink className="ml-1 h-3.5 w-3.5" />
+                  <a href={p.repo} target="_blank" rel="noreferrer" className="inline-flex items-center text-sm text-neutral-200 hover:text-white">
+                    {t.projects.code} <ExternalLink className="ml-1 h-3.5 w-3.5" />
                   </a>
                 ) : (
-                  <span className="inline-flex items-center text-sm text-neutral-600 cursor-not-allowed" title="Repo pas encore disponible">
-                    Code <ExternalLink className="ml-1 h-3.5 w-3.5" />
+                  <span className="inline-flex items-center text-sm text-neutral-600 cursor-not-allowed" title={t.projects.repoUnavailable}>
+                    {t.projects.code} <ExternalLink className="ml-1 h-3.5 w-3.5" />
                   </span>
                 )}
                 <span className="text-neutral-700">•</span>
                 {p.demo ? (
-                  <a
-                    href={p.demo}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center text-sm text-neutral-200 hover:text-white"
-                  >
-                    Démo <ExternalLink className="ml-1 h-3.5 w-3.5" />
+                  <a href={p.demo} target="_blank" rel="noreferrer" className="inline-flex items-center text-sm text-neutral-200 hover:text-white">
+                    {t.projects.demo} <ExternalLink className="ml-1 h-3.5 w-3.5" />
                   </a>
                 ) : (
-                  <span className="inline-flex items-center text-sm text-neutral-600 cursor-not-allowed" title="Démo pas encore disponible">
-                    Démo <ExternalLink className="ml-1 h-3.5 w-3.5" />
+                  <span className="inline-flex items-center text-sm text-neutral-600 cursor-not-allowed" title={t.projects.demoUnavailable}>
+                    {t.projects.demo} <ExternalLink className="ml-1 h-3.5 w-3.5" />
                   </span>
                 )}
               </div>

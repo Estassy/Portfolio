@@ -1,22 +1,26 @@
+"use client";
+
 import { useState } from "react";
 import TabButton from "../components/TabButton";
 import { motion } from "framer-motion";
 import SmoothLink from "../components/SmoothLink";
+import { useLang } from "../i18n/LangContext";
 
 function PanelWithTabs() {
   const [tab, setTab] = useState<string>("diplomas");
+  const { t } = useLang();
 
   return (
     <div className="mt-5">
       <div className="flex items-center gap-2">
         <TabButton active={tab === "diplomas"} onClick={() => setTab("diplomas")}>
-          Diplômes
+          {t.tabs.diplomas}
         </TabButton>
         <TabButton active={tab === "langues"} onClick={() => setTab("langues")}>
-          Langues
+          {t.tabs.languages}
         </TabButton>
         <TabButton active={tab === "objective"} onClick={() => setTab("objective")}>
-          Objectif
+          {t.tabs.objective}
         </TabButton>
       </div>
 
@@ -30,11 +34,11 @@ function PanelWithTabs() {
       >
         {tab === "objective" && (
           <div>
-            <p className="mb-2 font-semibold text-neutral-200">Objectif 2026</p>
-            <p>Approfondir mon expertise en architecture logicielle et progresser sur des projets à forte valeur ajoutée, en environnement Agile.</p>
+            <p className="mb-2 font-semibold text-neutral-200">{t.tabs.objectiveTitle}</p>
+            <p>{t.tabs.objectiveText}</p>
             <div className="mt-3 flex gap-2">
               <SmoothLink targetId="contact" className="inline-flex items-center rounded-full bg-white/90 px-3 py-1 text-sm font-semibold text-neutral-900">
-                Contactez‑moi
+                {t.tabs.contactMe}
               </SmoothLink>
             </div>
           </div>
@@ -42,17 +46,16 @@ function PanelWithTabs() {
 
         {tab === "diplomas" && (
           <div>
-            <p className="mb-2 font-semibold text-neutral-200">Diplômes</p>
+            <p className="mb-2 font-semibold text-neutral-200">{t.tabs.diplomasTitle}</p>
             <ul className="space-y-3 text-neutral-300">
               <li>
-                <div className="font-medium text-white">Master : Informatique - Ingénierie des données</div>
-                <div className="mt-1 text-xs text-neutral-400">Université Aix-Marseille, MIAGE | 2023 - 2025</div>
-                <div className="mt-1 text-xs text-green-400">Erasmus | TalTech, Estonie | Cursus intégralement en anglais | Sept 2023 - Janv 2024</div>
+                <div className="font-medium text-white">{t.tabs.masterTitle}</div>
+                <div className="mt-1 text-xs text-neutral-400">{t.tabs.masterSchool}</div>
+                <div className="mt-1 text-xs text-green-400">{t.tabs.masterErasmus}</div>
               </li>
-
               <li>
-                <div className="font-medium text-white">Licence : Informatique</div>
-                <div className="mt-1 text-xs text-neutral-400">Université Aix-Marseille, UFR Sciences, MIAGE | 2020 - 2023</div>
+                <div className="font-medium text-white">{t.tabs.licenceTitle}</div>
+                <div className="mt-1 text-xs text-neutral-400">{t.tabs.licenceSchool}</div>
               </li>
             </ul>
           </div>
@@ -60,12 +63,12 @@ function PanelWithTabs() {
 
         {tab === "langues" && (
           <div>
-            <p className="mb-3 font-semibold text-neutral-200">Anglais</p>
+            <p className="mb-3 font-semibold text-neutral-200">{t.tabs.langTitle}</p>
             <div className="flex items-center justify-between">
               <div>
-                <div className="font-medium text-white">Niveau opérationnel</div>
-                <div className="text-xs text-green-400">✓ Validé par Erasmus (TalTech, Estonie)</div>
-                <div className="text-xs text-neutral-400">Cursus intégralement en anglais</div>
+                <div className="font-medium text-white">{t.tabs.langLevel}</div>
+                <div className="text-xs text-green-400">{t.tabs.langValidated}</div>
+                <div className="text-xs text-neutral-400">{t.tabs.langCourse}</div>
               </div>
               <div className="flex gap-1">
                 {[...Array(4)].map((_, i) => (
@@ -76,7 +79,7 @@ function PanelWithTabs() {
             </div>
             <div className="mt-4 rounded-md bg-neutral-800 p-2">
               <div className="text-xs text-neutral-300">
-                <span className="font-medium">Expérience :</span> 5 mois d&apos;études en environnement anglophone
+                <span className="font-medium">{t.tabs.langXp}</span> {t.tabs.langXpDetail}
               </div>
             </div>
           </div>

@@ -1,69 +1,233 @@
 @import "tailwindcss";
 
+/* ============================================================
+   ACCENT / BRAND TOKENS
+   ============================================================ */
 :root {
-  --background: #0a0a0a;
-  --foreground: #ededed;
-  --accent: #6366f1;
-  --accent-light: #818cf8;
-  --accent-glow: rgba(99, 102, 241, 0.15);
+  --accent:        #6366f1;
+  --accent-light:  #818cf8;
+  --accent-glow:   rgba(99, 102, 241, 0.15);
   --accent-border: rgba(99, 102, 241, 0.3);
+  --scrollbar-track: #0a0a0a;
+  --scrollbar-thumb: #333;
 }
 
+/* ============================================================
+   THEME: DARK (default)
+   ============================================================ */
+html,
+html[data-theme="dark"] {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  --color-neutral-50:  oklch(0.985 0 0);
+  --color-neutral-100: oklch(0.96  0 0);
+  --color-neutral-200: oklch(0.922 0 0);
+  --color-neutral-300: oklch(0.87  0 0);
+  --color-neutral-400: oklch(0.709 0 0);
+  --color-neutral-500: oklch(0.556 0 0);
+  --color-neutral-600: oklch(0.439 0 0);
+  --color-neutral-700: oklch(0.371 0 0);
+  --color-neutral-800: oklch(0.269 0 0);
+  --color-neutral-900: oklch(0.205 0 0);
+  --color-neutral-950: oklch(0.145 0 0);
+  --scrollbar-track: #0a0a0a;
+  --scrollbar-thumb: #333;
+}
+
+/* ============================================================
+   THEME: LIGHT
+   ============================================================ */
+html[data-theme="light"] {
+  --background: #f1f5f9;
+  --foreground: #0f172a;
+
+  /* ── Neutral scale: fully inverted ──────────────────────── */
+  /* 950 = near-white page/card bg, 100 = near-black text     */
+  --color-neutral-50:  oklch(0.10 0 0);   /* darkest text     */
+  --color-neutral-100: oklch(0.15 0 0);
+  --color-neutral-200: oklch(0.22 0 0);   /* strong text      */
+  --color-neutral-300: oklch(0.32 0 0);   /* body text        */
+  --color-neutral-400: oklch(0.44 0 0);   /* secondary text   */
+  --color-neutral-500: oklch(0.54 0 0);   /* muted text       */
+  --color-neutral-600: oklch(0.65 0 0);   /* faint text       */
+  --color-neutral-700: oklch(0.77 0 0);   /* subtle border    */
+  --color-neutral-800: oklch(0.87 0 0);   /* light border     */
+  --color-neutral-900: oklch(0.94 0 0);   /* card surface     */
+  --color-neutral-950: oklch(0.975 0 0);  /* page background  */
+
+  /* ── Accent colors: darkened for light-bg readability ───── */
+  --color-indigo-300: oklch(0.44 0.21 275);
+  --color-indigo-400: oklch(0.49 0.23 275);
+  --color-indigo-500: oklch(0.54 0.24 275);
+  --color-indigo-950: oklch(0.95 0.03 275);
+  --color-blue-300:   oklch(0.43 0.14 255);
+  --color-blue-400:   oklch(0.48 0.16 255);
+  --color-green-400:  oklch(0.38 0.17 145);
+  --color-green-300:  oklch(0.34 0.14 145);
+  --color-amber-400:  oklch(0.48 0.14 85);
+  --color-violet-400: oklch(0.49 0.21 295);
+  --color-purple-400: oklch(0.49 0.20 310);
+
+  --scrollbar-track: #e2e8f0;
+  --scrollbar-thumb: #94a3b8;
+}
+
+/* ── White keyword overrides (can't be done via CSS vars) ─── */
+html[data-theme="light"] .text-white          { color: oklch(0.10 0 0); }
+html[data-theme="light"] .text-white\/80      { color: oklch(0.10 0 0 / 0.8); }
+html[data-theme="light"] .bg-white\/90        { background-color: oklch(0.14 0 0 / 0.9); }
+html[data-theme="light"] .hover\:bg-white:hover { background-color: oklch(0.08 0 0); }
+/* Header logo: "BATABA" — from-white to-neutral-300 gradient */
+html[data-theme="light"] .from-white {
+  --tw-gradient-from: oklch(0.10 0 0) var(--tw-gradient-from-position);
+}
+html[data-theme="light"] .to-neutral-300 {
+  --tw-gradient-to: oklch(0.32 0 0) var(--tw-gradient-to-position);
+}
+html[data-theme="light"] .bg-white\/5  { background-color: oklch(0.10 0 0 / 0.05); }
+html[data-theme="light"] .bg-white\/10 { background-color: oklch(0.10 0 0 / 0.10); }
+html[data-theme="light"] .ring-white\/5 { --tw-ring-color: oklch(0.10 0 0 / 0.05); }
+/* Sub-card date text: neutral-400 on light gray is too faint → force darker */
+html[data-theme="light"] .text-neutral-400 { color: oklch(0.38 0 0); }
+html[data-theme="light"] .text-neutral-500 { color: oklch(0.48 0 0); }
+/* Badge Alternance: text-orange-300 invisible on light → dark orange */
+html[data-theme="light"] .text-orange-300      { color: oklch(0.42 0.17 50); }
+html[data-theme="light"] .bg-orange-600\/20    { background-color: oklch(0.60 0.16 50 / 0.12); }
+html[data-theme="light"] .ring-orange-600\/30  { --tw-ring-color: oklch(0.55 0.16 50 / 0.28); }
+/* Badge CDI: text-green-300 invisible on light → dark green */
+html[data-theme="light"] .text-green-300       { color: oklch(0.36 0.16 145); }
+html[data-theme="light"] .bg-green-600\/20     { background-color: oklch(0.55 0.16 145 / 0.12); }
+html[data-theme="light"] .ring-green-600\/30   { --tw-ring-color: oklch(0.50 0.16 145 / 0.28); }
+
+/* ── Header backdrop ─────────────────────────────────────── */
+html[data-theme="light"] .supports-\[backdrop-filter\]\:bg-neutral-950\/60 {
+  background-color: oklch(0.975 0 0 / 0.88);
+}
+
+/* ── Experience sub-cards: dark bg/border → light in theme ─ */
+/* bg-neutral-800/30 on light = near-white → override to a visible surface */
+html[data-theme="light"] .bg-neutral-800\/30 {
+  background-color: oklch(0.92 0 0);
+}
+html[data-theme="light"] .border-neutral-700\/50 {
+  border-color: oklch(0.77 0 0 / 0.6);
+}
+/* bg-neutral-950/90 mobile menu backdrop */
+html[data-theme="light"] .bg-neutral-950\/90 {
+  background-color: oklch(0.975 0 0 / 0.95);
+}
+/* profile right panel tabs bg */
+html[data-theme="light"] .bg-neutral-900 {
+  background-color: oklch(0.94 0 0);
+}
+/* profile panel card */
+html[data-theme="light"] .bg-neutral-950 {
+  background-color: oklch(0.975 0 0);
+}
+/* hover bg on skill items */
+html[data-theme="light"] .hover\:bg-indigo-950\/30:hover {
+  background-color: oklch(0.95 0.03 275 / 0.30);
+}
+html[data-theme="light"] .bg-indigo-950\/20 {
+  background-color: oklch(0.95 0.03 275 / 0.20);
+}
+html[data-theme="light"] .bg-indigo-950\/10 {
+  background-color: oklch(0.95 0.03 275 / 0.10);
+}
+
+/* ── Gradient bg overrides for experience cards ─────────── */
+/* from-indigo-950/30 → stays readable */
+html[data-theme="light"] .from-indigo-950\/30 {
+  --tw-gradient-from: oklch(0.95 0.03 275 / 0.18) var(--tw-gradient-from-position);
+}
+html[data-theme="light"] .from-blue-950\/20 {
+  --tw-gradient-from: oklch(0.95 0.03 255 / 0.15) var(--tw-gradient-from-position);
+}
+html[data-theme="light"] .from-blue-950\/10 {
+  --tw-gradient-from: oklch(0.95 0.03 255 / 0.08) var(--tw-gradient-from-position);
+}
+html[data-theme="light"] .from-blue-950\/5 {
+  --tw-gradient-from: oklch(0.95 0.03 255 / 0.05) var(--tw-gradient-from-position);
+}
+html[data-theme="light"] .via-neutral-900\/90 {
+  --tw-gradient-via: oklch(0.94 0 0 / 0.9) var(--tw-gradient-via-position);
+}
+html[data-theme="light"] .to-neutral-900 {
+  --tw-gradient-to: oklch(0.94 0 0) var(--tw-gradient-to-position);
+}
+
+/* ── Shadow overrides ──────────────────────────────────── */
+html[data-theme="light"] .shadow-black\/50 {
+  --tw-shadow-color: oklch(0.50 0 0 / 0.12);
+}
+html[data-theme="light"] .shadow-indigo-500\/10 {
+  --tw-shadow-color: oklch(0.54 0.24 275 / 0.10);
+}
+
+/* ============================================================
+   THEME: OCEAN (deep blue premium)
+   ============================================================ */
+html[data-theme="ocean"] {
+  --background: #060d1f;
+  --foreground: #e2eeff;
+  --accent:        #38bdf8;
+  --accent-light:  #7dd3fc;
+  --accent-glow:   rgba(56, 189, 248, 0.15);
+  --accent-border: rgba(56, 189, 248, 0.3);
+
+  --color-neutral-50:  oklch(0.97  0.010 250);
+  --color-neutral-100: oklch(0.93  0.015 250);
+  --color-neutral-200: oklch(0.87  0.020 250);
+  --color-neutral-300: oklch(0.78  0.025 250);
+  --color-neutral-400: oklch(0.63  0.030 250);
+  --color-neutral-500: oklch(0.50  0.035 250);
+  --color-neutral-600: oklch(0.39  0.035 250);
+  --color-neutral-700: oklch(0.29  0.040 250);
+  --color-neutral-800: oklch(0.20  0.040 250);
+  --color-neutral-900: oklch(0.135 0.040 250);
+  --color-neutral-950: oklch(0.09  0.040 250);
+
+  --color-indigo-300:  oklch(0.82 0.12 220);
+  --color-indigo-400:  oklch(0.73 0.15 220);
+  --color-indigo-500:  oklch(0.63 0.18 220);
+  --color-indigo-600:  oklch(0.55 0.19 220);
+  --color-indigo-950:  oklch(0.14 0.06 230);
+
+  --scrollbar-track: #060d1f;
+  --scrollbar-thumb: #1e3a5f;
+}
+
+/* ============================================================
+   BASE
+   ============================================================ */
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-geist-sans), ui-sans-serif, system-ui;
 }
 
-html {
-  scroll-behavior: smooth;
+html { scroll-behavior: smooth; }
+
+body, header, main, footer, section, article, nav, aside {
+  transition: background-color 0.3s ease, color 0.2s ease, border-color 0.3s ease;
 }
 
-/* Accent selection */
-::selection {
-  background: rgba(99, 102, 241, 0.3);
-  color: #fff;
-}
+::selection { background: var(--accent-glow); color: #fff; }
 
-/* Scrollbar */
-::-webkit-scrollbar {
-  width: 6px;
-}
-::-webkit-scrollbar-track {
-  background: #0a0a0a;
-}
-::-webkit-scrollbar-thumb {
-  background: #333;
-  border-radius: 3px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #6366f1;
-}
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--scrollbar-track); }
+::-webkit-scrollbar-thumb { background: var(--scrollbar-thumb); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--accent); }
 
-/* Glow animation */
 @keyframes glow-pulse {
   0%, 100% { opacity: 0.4; }
-  50% { opacity: 0.8; }
+  50%       { opacity: 0.8; }
 }
+.accent-glow { animation: glow-pulse 3s ease-in-out infinite; }
 
-.accent-glow {
-  animation: glow-pulse 3s ease-in-out infinite;
-}
-
-/* Mobile optimizations */
 @media (max-width: 640px) {
-  body {
-    overflow-x: hidden;
-  }
-  a, button {
-    min-height: 44px;
-    min-width: 44px;
-  }
-  h1, h2, h3 {
-    line-height: 1.2;
-  }
+  body { overflow-x: hidden; }
+  a, button { min-height: 44px; min-width: 44px; }
+  h1, h2, h3 { line-height: 1.2; }
 }
-
-* {
-  -webkit-overflow-scrolling: touch;
-}
+* { -webkit-overflow-scrolling: touch; }

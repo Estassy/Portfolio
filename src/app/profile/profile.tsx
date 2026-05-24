@@ -12,8 +12,20 @@ import {
 import { motion } from "framer-motion";
 import PanelWithTabs from "./profileADroite";
 import SmoothLink from "../components/SmoothLink";
+import { useLang } from "../i18n/LangContext";
 
 function Profile() {
+  const { t } = useLang();
+
+  const skillTiles = [
+    { icon: <Server className="h-4 w-4" />, label: t.profile.skillTiles.backend, value: "Java (Spring / Quarkus)" },
+    { icon: <Boxes className="h-4 w-4" />, label: t.profile.skillTiles.frontend, value: "React & Angular" },
+    { icon: <Brain className="h-4 w-4" />, label: t.profile.skillTiles.devops, value: "CI/CD & Cloud" },
+    { icon: <Database className="h-4 w-4" />, label: t.profile.skillTiles.databases, value: "SQL & NoSQL" },
+    { icon: <Cloud className="h-4 w-4" />, label: "API", value: "REST & GraphQL" },
+    { icon: <ClipboardList className="h-4 w-4" />, label: t.profile.skillTiles.methodologies, value: "Agile/Kanban" },
+  ];
+
   return (
     <section id="home" className="relative py-8 sm:py-12 md:py-16 lg:py-24 overflow-hidden">
       {/* Background accent glow */}
@@ -33,7 +45,7 @@ function Profile() {
               <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-indigo-500 to-violet-600 text-lg font-bold text-white shadow-lg shadow-indigo-500/25">
                 MB
               </div>
-              <span className="absolute -bottom-1 -right-1 h-4 w-4 rounded-full border-2 border-neutral-950 bg-emerald-400" title="Disponible" />
+              <span className="absolute -bottom-1 -right-1 h-4 w-4 rounded-full border-2 border-neutral-950 bg-emerald-400" title={t.profile.available} />
             </div>
             <div>
               <p className="text-xs uppercase tracking-[0.2em] text-neutral-500">
@@ -56,18 +68,18 @@ function Profile() {
             </span>
           </h1>
           <p className="mt-3 text-base font-medium text-neutral-300 sm:text-lg md:text-xl">
-            Software Engineer — Java (Spring Boot / Quarkus) • React / Angular
+            {t.profile.subtitle}
           </p>
 
           <div className="mt-4 sm:mt-5 space-y-3 max-w-prose text-sm sm:text-base text-neutral-400 leading-relaxed">
             <p>
-              Software Engineer spécialisé en développement Full-Stack Java, je conçois et développe des applications web modernes avec <span className="text-indigo-300 font-medium">Spring Boot, Quarkus, React et Angular</span>.
+              {t.profile.bio1} <span className="text-indigo-300 font-medium">{t.profile.bio1Tech}</span>.
             </p>
             <p>
-              J&apos;interviens sur des architectures Backend performantes, des <span className="text-neutral-200 font-medium">API REST/GraphQL</span> et des interfaces Frontend orientées expérience utilisateur, dans des environnements Agile et CI/CD.
+              {t.profile.bio2} <span className="text-neutral-200 font-medium">{t.profile.bio2Tech}</span> {t.profile.bio2Rest}
             </p>
             <p>
-              Curieux techniquement et orienté qualité logicielle, je m&apos;intéresse également aux problématiques <span className="text-indigo-300 font-medium">Cloud, DevOps et architecture applicative</span>.
+              {t.profile.bio3} <span className="text-indigo-300 font-medium">{t.profile.bio3Tech}</span>.
             </p>
           </div>
 
@@ -76,13 +88,13 @@ function Profile() {
               targetId="projects"
               className="inline-flex items-center rounded-full bg-indigo-600 px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-indigo-500/25 hover:bg-indigo-500 transition-colors"
             >
-              Voir mes projets <ArrowRight className="ml-2 h-4 w-4" />
+              {t.profile.ctaProjects} <ArrowRight className="ml-2 h-4 w-4" />
             </SmoothLink>
             <SmoothLink
               targetId="experiences"
               className="inline-flex items-center rounded-full border border-neutral-700 px-5 py-2.5 text-sm text-neutral-300 hover:border-indigo-600/50 hover:text-white transition-colors"
             >
-              Mon parcours
+              {t.profile.ctaExperiences}
             </SmoothLink>
           </div>
         </div>
@@ -96,14 +108,7 @@ function Profile() {
           >
             {/* top: compact skill tiles */}
             <div className="grid grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-3">
-              {[
-                { icon: <Server className="h-4 w-4" />, label: "Back-end", value: "Java (Spring / Quarkus)" },
-                { icon: <Boxes className="h-4 w-4" />, label: "Front-end", value: "React & Angular" },
-                { icon: <Brain className="h-4 w-4" />, label: "DevOps", value: "CI/CD & Cloud" },
-                { icon: <Database className="h-4 w-4" />, label: "Bases de données", value: "SQL & NoSQL" },
-                { icon: <Cloud className="h-4 w-4" />, label: "API", value: "REST & GraphQL" },
-                { icon: <ClipboardList className="h-4 w-4" />, label: "Méthodo", value: "Agile/Kanban" },
-              ].map((s) => (
+              {skillTiles.map((s) => (
                 <div
                   key={s.label}
                   className="group flex flex-col items-center justify-center rounded-xl border border-neutral-800 bg-neutral-950 p-2 sm:p-3 text-center transition-all hover:border-indigo-600/40 hover:bg-indigo-950/20"
